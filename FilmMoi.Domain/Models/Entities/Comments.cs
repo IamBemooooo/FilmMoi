@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FilmMoi.Domain.Models.Entities
 {
-    public class Comments : EntityBase
+    public class Comments : ICreatedBase, IModifiedBase
     {
         public Guid ID { get; set; }
         public string Comment_text { get; set; }
@@ -18,5 +18,9 @@ namespace FilmMoi.Domain.Models.Entities
 
         public Guid ID_Film { get; set; }
         public virtual Films Film { get; set; }
+        public DateTimeOffset CreatedTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Guid? CreatedBy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DateTimeOffset ModifiedTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Guid? ModifiedBy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

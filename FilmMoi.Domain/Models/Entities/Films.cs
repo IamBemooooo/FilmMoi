@@ -25,6 +25,5 @@ namespace FilmMoi.Models.Models.Entities
         public virtual ICollection<Episodes> Episodes { get; set; }
         public virtual ICollection<Comments> Comments { get; set; }
         public virtual ICollection<WatchedFilms> WatchedFilms { get; set; }
-        public virtual ICollection<Operations> Operations { get; set; }
     }
 }

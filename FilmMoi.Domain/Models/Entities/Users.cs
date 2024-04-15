@@ -8,6 +8,6 @@ namespace FilmMoi.Domain.Models.Entities
         public Roles Role { get; set; }
         public virtual ICollection<Comments> Comments { get; set; }
         public virtual ICollection<WatchedFilms> WatchedFilms { get; set; }
-        public virtual ICollection<Operations> Operations { get; set; }
+    
     }
 }
