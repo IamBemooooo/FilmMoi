@@ -29,7 +29,7 @@ public partial class FlimMoiContext : DbContext
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
-    #region 
+    #region DbSet
    
     #endregion
 
