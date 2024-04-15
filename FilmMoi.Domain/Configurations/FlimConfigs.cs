@@ -1,4 +1,4 @@
-﻿using FilmMoi.Models.Models.Entities;
+﻿using FilmMoi.Domain.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;

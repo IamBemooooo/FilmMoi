@@ -14,6 +14,8 @@ namespace FilmMoi.Models.Configurations
         public void Configure(EntityTypeBuilder<Ratings> builder)
         {
             builder.HasKey(x => new { x.ID_User, x.ID_Film });
+            builder.HasOne(x=>x.Film).WithMany(x => x.Ratings).HasForeignKey(x => x.ID_Film);
+            builder.HasOne(x=>x.User).WithMany(x => x.Ratings).HasForeignKey(x => x.ID_User);
         }
     }
 }

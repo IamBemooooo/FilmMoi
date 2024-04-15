@@ -2,8 +2,8 @@
 
 namespace FilmMoi.Domain.Models.Entities
 {
-    public class Roles : IdentityUser<Guid>
+    public class Roles : IdentityRole<Guid>
     {
-        ICollection<Users> Users { get; set; }
+       public virtual ICollection<Users> Users { get; set; }
     }
 }
