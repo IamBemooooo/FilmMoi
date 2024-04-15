@@ -14,6 +14,7 @@ namespace FilmMoi.Models.Configurations
         public void Configure(EntityTypeBuilder<Users> builder)
         {
             builder.HasKey(x => x.Id);
+            builder.HasOne(x=>x.Roles).WithMany(x=>x.Users).HasForeignKey(x=>x.RoleId);
         }
     }
 }

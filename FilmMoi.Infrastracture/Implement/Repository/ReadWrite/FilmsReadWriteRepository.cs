@@ -1,7 +1,6 @@
 ﻿using FilmMoi.Application.Interface;
 using FilmMoi.Domain.Models;
-using FilmMoi.Models.Models;
-using FilmMoi.Models.Models.Entities;
+using FilmMoi.Domain.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
