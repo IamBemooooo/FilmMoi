@@ -1,8 +1,8 @@
 ﻿using FilmMoi.Application.ValueObj.Pagination;
 
-namespace FilmMoi.Application.Interface
+namespace FilmMoi.Application.Interface.ReadOnly
 {
-    public interface IReadOnlyRepository<TDataDto,TDataVM>
+    public interface IFilmsReadOnlyRepository<TDataDto, TDataVM>
     {
         public Task<PaginationResponse<TDataDto?>> GetAll(TDataVM? obj, CancellationToken cancellationToken);
 
