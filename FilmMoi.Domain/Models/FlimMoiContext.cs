@@ -24,6 +24,7 @@ public partial class FlimMoiContext : DbContext
     {
 
         optionsBuilder.UseSqlServer("Server=SURINRIN\\SQLEXPRESS01;Database=FlimMoi;Trusted_Connection=True;TrustServerCertificate=True");
+        //optionsBuilder.UseSqlServer("Server=.;Database=FlimMoi;Trusted_Connection=True;TrustServerCertificate=True");
     }
 
 
@@ -32,6 +33,7 @@ public partial class FlimMoiContext : DbContext
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         SeedingData(modelBuilder);
     }
+
     private void SeedingData(ModelBuilder modelBuilder)
     {
         //Role

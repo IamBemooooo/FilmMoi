@@ -1,10 +1,10 @@
 ﻿using FilmMoi.Application.DataTransferObj.Films;
-using FilmMoi.Application.Interface;
+using FilmMoi.Application.Interface.ReadOnly;
 using FilmMoi.Application.ValueObj.Pagination;
 
 namespace FilmMoi.Infrastructure.Implement.Repository.ReadOnly
 {
-    public class FilmsReadOnlyRepository : IReadOnlyRepository<FilmDto, FilmsWithPaginationRequest>
+    public class FilmsReadOnlyRepository : IFilmsReadOnlyRepository<FilmDto, FilmsWithPaginationRequest>
     {
         public Task<PaginationResponse<FilmDto?>> GetAll(FilmsWithPaginationRequest? obj, CancellationToken cancellationToken)
         {
