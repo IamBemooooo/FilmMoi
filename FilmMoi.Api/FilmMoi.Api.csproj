@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\FilmMoi.Application\FilmMoi.Application.csproj" />
+    <ProjectReference Include="..\FilmMoi.Infrastracture\FilmMoi.Infrastracture.csproj" />
   </ItemGroup>
 
 </Project>
