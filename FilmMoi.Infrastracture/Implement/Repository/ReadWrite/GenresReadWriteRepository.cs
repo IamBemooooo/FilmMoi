@@ -43,8 +43,18 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadWrite
         {
             try
             {
-                _context.Genres.Update(data);
-                _context.SaveChanges();
+                /* var obj = await GetById(id);
+                 obj.ModifiedTime = DateTime.UtcNow;
+                 _mapper.Map(data, obj);
+                 _context.Genres.Update(obj);
+                 await _context.SaveChangesAsync();
+                 return await Task.FromResult(true);*/
+                var obj = await GetById(id);
+                obj.GenreName = string.IsNullOrEmpty(data.GenreName) ? obj.GenreName : data.GenreName;
+                obj.ModifiedTime = DateTime.UtcNow;
+                obj.ModifiedBy = data.ModifiedBy;
+                _context.Genres.Update(obj);
+                await _context.SaveChangesAsync();
                 return await Task.FromResult(true);
             }
             catch
@@ -57,18 +67,24 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadWrite
         {
             try
             {
-                var obj = await _context.Genres.FindAsync(data.ID);
+                var obj = await GetById(id);
                 obj.Deleted = true;
                 obj.DeletedBy = data.DeletedBy;
                 obj.DeletedTime = DateTime.UtcNow;
                 _context.Genres.Update(obj);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return await Task.FromResult(true);
             }
             catch
             {
                 return await Task.FromResult(false);
             }
+        }
+
+        private async Task<Genres> GetById(Guid id)
+        {
+            var obj = await _context.Genres.FindAsync(id);
+            return obj;
         }
     }
 }
