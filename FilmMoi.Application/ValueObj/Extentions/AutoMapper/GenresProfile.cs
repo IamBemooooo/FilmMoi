@@ -15,7 +15,10 @@ namespace FilmMoi.Application.ValueObj.Extentions.AutoMapper
         {
             CreateMap<Genres,GenreDto>().ReverseMap();
             CreateMap<GenreCreateRequest, Genres>();
-
+            CreateMap<GenreDeleteRequest, Genres>();
+            CreateMap<GenreUpdateRequest, Genres>();
+            CreateMap<Genres, Genres>().ForAllMembers(opts => opts.Condition((src, dest, srcMember, destMember) =>
+            srcMember != null && !srcMember.Equals(destMember)));
         }
     }
 }

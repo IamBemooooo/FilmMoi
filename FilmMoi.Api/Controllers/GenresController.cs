@@ -81,5 +81,19 @@ namespace FilmMoi.Api.Controllers
                 return BadRequest("Faild: " + $"{ex.Message}");
             }
         }
+
+        [HttpPut]
+        public async Task<IActionResult> Update(GenreUpdateRequest request, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var obj = await _repoWrite.Update(request.ID, _mapper.Map<Genres>(request), cancellationToken);
+                return Ok(obj);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Faild: " + $"{ex.Message}");
+            }
+        }
     }
 }
