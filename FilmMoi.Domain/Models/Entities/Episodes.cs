@@ -14,7 +14,7 @@ namespace FilmMoi.Domain.Models.Entities
 
         public string Name { get; set; }
         public string Film_Path { get; set; }
-
+        public TimeSpan Duration { get; set; }
         public Guid ID_Film { get; set; }
         public virtual Films Film { get; set; }
         public DateTimeOffset CreatedTime { get; set; }
