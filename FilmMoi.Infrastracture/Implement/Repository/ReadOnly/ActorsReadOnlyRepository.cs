@@ -26,7 +26,7 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadOnly
         }
         public async Task<PaginationResponse<ActorDto>> GetActorWithPaginationRequest(ActorWithPaginationRequest request, CancellationToken cancellationToken)
         {
-            var queryable = _context.Actors.AsNoTracking();
+            var queryable = _context.Actors.AsNoTracking().Where(x => x.Deleted == false);
 
             // check if search field is null
             if (!string.IsNullOrWhiteSpace(request.Name))
