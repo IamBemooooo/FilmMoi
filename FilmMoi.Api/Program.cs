@@ -1,12 +1,5 @@
-﻿using FilmMoi.Application.Interface.ReadOnly;
-using FilmMoi.Application.Interface.ReadWrite;
-using FilmMoi.Application.ValueObj.Extentions;
-using FilmMoi.Domain.Models;
-using FilmMoi.Domain.Models.Entities;
-using FilmMoi.Infrastracture.Implement.Repository.ReadOnly;
+﻿using FilmMoi.Application.ValueObj.Extentions;
 using FilmMoi.Infrastracture.DependencyInjection;
-using FilmMoi.Infrastracture.Implement.Repository.ReadWrite;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplication();//Required
