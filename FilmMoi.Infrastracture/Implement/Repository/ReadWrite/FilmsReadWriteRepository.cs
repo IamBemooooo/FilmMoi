@@ -1,4 +1,5 @@
-﻿using FilmMoi.Application.Interface.ReadWrite;
+﻿using AutoMapper;
+using FilmMoi.Application.Interface.ReadWrite;
 using FilmMoi.Domain.Models;
 using FilmMoi.Domain.Models.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -14,16 +15,22 @@ namespace FilmMoi.Infrastructure.Implement.Repository.ReadWrite
     public class FilmsReadWriteRepository : IReadWriteRepository<Films>
     {
         private readonly FlimMoiContext _db;
+        private readonly IMapper _map;
 
-        public FilmsReadWriteRepository()
+        public FilmsReadWriteRepository(IMapper map)
         {
             _db = new FlimMoiContext();
+            _map = map;
+
         }
 
         public async Task<bool> Create(Films data, CancellationToken cancellationToken)
         {
             try
             {
+                data.CreatedTime = DateTimeOffset.UtcNow;
+                data.AvgDuration = TimeSpan.Zero;
+                data.TotalEpisode = 0;
                 await _db.Films.AddAsync(data);
                 await _db.SaveChangesAsync();
                 return true;
@@ -40,7 +47,8 @@ namespace FilmMoi.Infrastructure.Implement.Repository.ReadWrite
             try
             {
                 var obj = await GetById(id,cancellationToken);
-                _db.Films.Remove(obj);
+                obj.Deleted = true;
+                _db.Films.Update(obj);
                 await _db.SaveChangesAsync();
                 return true;
 
@@ -52,11 +60,14 @@ namespace FilmMoi.Infrastructure.Implement.Repository.ReadWrite
             }
         }
 
-        public async Task<bool> Update(Guid id,Films data, CancellationToken cancellationToken)
+        public async Task<bool> Update(Guid id,Films data,CancellationToken cancellationToken)
         {
             try
             {
                 var obj = await GetById(id, cancellationToken);
+                obj.AvgDuration = TimeSpan.Zero;
+                obj.ModifiedTime = DateTimeOffset.UtcNow;
+                _map.Map(data, obj);
                 _db.Films.Update(obj);
                 await _db.SaveChangesAsync();
                 return true;
