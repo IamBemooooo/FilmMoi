@@ -7,11 +7,6 @@ using FilmMoi.Infrastracture.Implement.Repository.ReadWrite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FilmMoi.Infrastracture.DependencyInjection
 {
@@ -19,7 +14,7 @@ namespace FilmMoi.Infrastracture.DependencyInjection
     {
         public static IServiceCollection AddEventBus(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContextPool<FlimMoiContext>(options =>
+            services.AddDbContext<FlimMoiContext>(options =>
             {
                 // Configure your DbContext options here
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
@@ -31,6 +26,8 @@ namespace FilmMoi.Infrastracture.DependencyInjection
             //services.AddTransient<IExampleReadWriteRepository, ExampleReadWriteRepository>();
             services.AddTransient<IGenresReadOnlyRepository, GenresReadOnlyRepository>();//required
             services.AddTransient<IReadWriteRepository<Genres>, GenresReadWriteRepository>();//required
+            services.AddTransient<IActorsReadOnlyrepository, ActorsReadOnlyRepository>();//required
+            services.AddTransient<IReadWriteRepository<Actors>, ActorsReadWriteRepository>();//required
             return services;
         }
     }
