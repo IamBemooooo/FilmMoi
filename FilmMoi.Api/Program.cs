@@ -1,6 +1,4 @@
-using FilmMoi.Application.Interface.ReadWrite;
 using FilmMoi.Application.ValueObj.Extentions;
-using FilmMoi.Infrastructure.Implement.Repository.ReadWrite;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplication();
 // Add services to the container.

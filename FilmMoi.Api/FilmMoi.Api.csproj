@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FilmMoi.Application\FilmMoi.Application.csproj" />
     <ProjectReference Include="..\FilmMoi.Infrastracture\FilmMoi.Infrastracture.csproj" />
   </ItemGroup>
 
