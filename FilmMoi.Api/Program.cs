@@ -19,7 +19,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<FlimMoiContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));//required
 builder.Services.AddTransient<IGenresReadOnlyRepository, GenresReadOnlyRepository>();//required
 builder.Services.AddTransient<IReadWriteRepository<Genres>, GenresReadWriteRepository>();//required
-
+builder.Services.AddTransient<IActorsReadOnlyrepository, ActorsReadOnlyRepository>();//required
+builder.Services.AddTransient<IReadWriteRepository<Actors>, ActorsReadWriteRepository>();//required
 builder.Services.AddCors(options =>////
 {
     options.AddPolicy("AllowLocalhost",
