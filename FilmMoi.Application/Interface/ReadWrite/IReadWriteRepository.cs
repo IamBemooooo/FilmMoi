@@ -4,6 +4,6 @@
     {
         public Task<bool> Create(TDataType data, CancellationToken cancellationToken);
         public Task<bool> Update(Guid id,TDataType data, CancellationToken cancellationToken);
-        public Task<bool> Delete(Guid id, CancellationToken cancellationToken);
+        public Task<bool> Delete(Guid id,TDataType?  data, CancellationToken cancellationToken);
     }
 }
