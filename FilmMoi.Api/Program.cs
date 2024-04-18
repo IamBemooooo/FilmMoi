@@ -1,4 +1,3 @@
-?using AutoMapper;
 using FilmMoi.Application.Interface.ReadOnly;
 using FilmMoi.Application.Interface.ReadWrite;
 using FilmMoi.Application.ValueObj.Extentions;
@@ -10,11 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-<<<<<<< dangs
-=======
 builder.Services.AddApplication();//Required
-
->>>>>>> master
 // Add services to the container.
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
