@@ -14,7 +14,6 @@ namespace FilmMoi.Domain.Models.Entities
         public string Image { get; set; }
         public DateTime Dob { get; set; }
         public string Nationality { get; set; }
-
         public virtual ICollection<FilmActors> filmActors { get; set; }
     }
 }

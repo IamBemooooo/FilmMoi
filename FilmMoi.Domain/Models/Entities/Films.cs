@@ -13,7 +13,8 @@ namespace FilmMoi.Domain.Models.Entities
         public Guid ID { get; set; }
         public string Name { get; set; }
         public string Image { get; set; }
-        public TimeSpan Duration { get; set; }
+        public TimeSpan AvgDuration { get; set; }
+        public int TotalEpisode { get; set; }
         public string Description { get; set; }
         public FilmStatus Status { get; set; }
         public int Year { get; set; }
