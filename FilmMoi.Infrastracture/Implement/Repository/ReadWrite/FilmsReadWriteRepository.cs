@@ -83,6 +83,7 @@ namespace FilmMoi.Infrastructure.Implement.Repository.ReadWrite
             var obj = await _db.Films.FirstOrDefaultAsync(x => x.ID == id && !x.Deleted);
             return obj;
         }
+
         public Task<bool> Delete(Guid id, Films? data, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
