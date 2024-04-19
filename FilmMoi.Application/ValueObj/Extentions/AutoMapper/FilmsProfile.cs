@@ -15,11 +15,13 @@ namespace FilmMoi.Application.ValueObj.Extentions.AutoMapper
         {
             CreateMap<FilmsCreateRequest, Films>();
             CreateMap<FilmsUpdateRequest, Films>();
+            CreateMap<FilmsDeleteRequest, Films>();
             CreateMap<Films, FilmDto>();
             CreateMap<Films, Films>()
                 .ForMember(x=>x.ID,o=>o.Ignore())
                 .ForMember(x=>x.Status,o=>o.Ignore())
                 .ForMember(x=>x.CreatedTime, o => o.Ignore())
+                .ForMember(x=>x.AvgDuration, o => o.Ignore())
                 .ForMember(x=>x.CreatedBy, o => o.Ignore());
 
         }
