@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Azure.Core;
+using FilmMoi.Application.DataTransferObj.Films;
 using FilmMoi.Application.Interface.ReadWrite;
 using FilmMoi.Domain.Models;
 using FilmMoi.Domain.Models.Entities;
@@ -40,14 +42,14 @@ namespace FilmMoi.Infrastructure.Implement.Repository.ReadWrite
 
                 throw new Exception(ex.Message);
             }
-        }
-
-        public async Task<bool> Delete(Guid id, CancellationToken cancellationToken)
+        }     
+        public async  Task<bool> Delete(Guid id, Films? data, CancellationToken cancellationToken)
         {
             try
             {
-                var obj = await GetById(id,cancellationToken);
+                var obj = await GetById(id, cancellationToken);
                 obj.Deleted = true;
+                obj.DeletedBy = data.DeletedBy;
                 _db.Films.Update(obj);
                 await _db.SaveChangesAsync();
                 return true;
@@ -59,14 +61,12 @@ namespace FilmMoi.Infrastructure.Implement.Repository.ReadWrite
                 throw new Exception(ex.Message);
             }
         }
-
         public async Task<bool> Update(Guid id,Films data,CancellationToken cancellationToken)
         {
             try
             {
                 var obj = await GetById(id, cancellationToken);
-                obj.AvgDuration = TimeSpan.Zero;
-                obj.ModifiedTime = DateTimeOffset.UtcNow;
+                data.ModifiedTime = DateTimeOffset.UtcNow;
                 _map.Map(data, obj);
                 _db.Films.Update(obj);
                 await _db.SaveChangesAsync();
@@ -82,11 +82,6 @@ namespace FilmMoi.Infrastructure.Implement.Repository.ReadWrite
         {
             var obj = await _db.Films.FirstOrDefaultAsync(x => x.ID == id && !x.Deleted);
             return obj;
-        }
-
-        public Task<bool> Delete(Guid id, Films? data, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
         }
     }
 }

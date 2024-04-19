@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FilmMoi.Application.DataTransferObj.Films;
 using FilmMoi.Application.Interface.ReadOnly;
+using FilmMoi.Application.Interface.ReadWrite;
 using FilmMoi.Domain.Models.Entities;
 using FilmMoi.Infrastructure.Implement.Repository.ReadOnly;
 using FilmMoi.Infrastructure.Implement.Repository.ReadWrite;
@@ -13,7 +14,7 @@ namespace FilmMoi.Api.Controllers
     [ApiController]
     public class FilmsController : ControllerBase
     {
-        private readonly FilmsReadWriteRepository _repoWrite;
+        private readonly IReadWriteRepository<Films> _repoWrite;
         private readonly FilmsReadOnlyRepository _repoOnly;
         private readonly IMapper _map;
         public FilmsController(IMapper map)
@@ -28,6 +29,19 @@ namespace FilmMoi.Api.Controllers
             try
             {
                var result = await _repoOnly.GetAll(request, cancellationToken);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Fail: {ex}");
+            }
+        } 
+        [HttpGet("id")]
+        public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken)
+        {
+            try
+            {
+               var result = await _repoOnly.GetById(id, cancellationToken);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -49,11 +63,11 @@ namespace FilmMoi.Api.Controllers
             }
         } 
         [HttpDelete]
-        public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
+        public async Task<IActionResult> Delete(FilmsDeleteRequest request, CancellationToken cancellationToken)
         {
             try
             {
-                await _repoWrite.Delete(id, cancellationToken);
+                await _repoWrite.Delete(request.Id,_map.Map<Films>(request), cancellationToken);
                 return Ok("Success");
             }
             catch (Exception ex)
