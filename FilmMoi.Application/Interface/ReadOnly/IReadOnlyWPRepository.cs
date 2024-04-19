@@ -2,7 +2,7 @@
 
 namespace FilmMoi.Application.Interface.ReadOnly
 {
-    public interface IReadOnlyRepository<TDataDto, TDataVM>
+    public interface IReadOnlyWPRepository<TDataDto, TDataVM>
     {
         public Task<PaginationResponse<TDataDto>> GetAll(TDataVM obj, CancellationToken cancellationToken);
 

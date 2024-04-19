@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FilmMoi.Infrastructure.Implement.Repository.ReadOnly
 {
-    public class FilmsReadOnlyRepository : IReadOnlyRepository<FilmDto, FilmsWithPaginationRequest>
+    public class FilmsReadOnlyRepository : IReadOnlyWPRepository<FilmDto, FilmsWithPaginationRequest>
     {
         private readonly FlimMoiContext _db;
         private readonly IMapper _map;

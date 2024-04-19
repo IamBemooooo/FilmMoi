@@ -16,17 +16,17 @@ using System.Threading.Tasks;
 
 namespace FilmMoi.Infrastracture.Implement.Repository.ReadOnly
 {
-    public class CommentROWPRepo : IReadOnlyWithPaginationRepository<CommentDto, CommentWithPaginationRequest>
+    public class CommentROWPRepository : IReadOnlyWPRepository<CommentDto, CommentWithPaginationRequest>
     {
         private readonly FlimMoiContext _context;
         public readonly IMapper _mapper;
-        public CommentROWPRepo(FlimMoiContext context, IMapper mapper)
+        public CommentROWPRepository(FlimMoiContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
-        public async Task<PaginationResponse<CommentDto>> GetObjWithPaginationRequest(CommentWithPaginationRequest request, CancellationToken cancellationToken)
+        public async Task<PaginationResponse<CommentDto>> GetAll(CommentWithPaginationRequest request, CancellationToken cancellationToken)
         {
             var queryable = _context.Comments.AsNoTracking().Where(x => x.ID_Film == request.ID);
             var users = _context.Users.AsNoTracking();

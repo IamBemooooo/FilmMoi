@@ -5,15 +5,10 @@ using FilmMoi.Application.Interface.ReadOnly;
 using FilmMoi.Domain.Models;
 using FilmMoi.Domain.Models.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FilmMoi.Infrastracture.Implement.Repository.ReadOnly
 {
-    public class GenresReadOnlyRepository : IGenresReadOnlyRepository
+    public class GenresReadOnlyRepository : IReadOnlyNPRepository<GenreDto>
     {
         private readonly FlimMoiContext _context;
         public readonly IMapper _mapper;

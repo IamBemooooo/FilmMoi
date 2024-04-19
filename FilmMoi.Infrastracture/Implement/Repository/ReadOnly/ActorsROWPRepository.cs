@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Azure.Core;
 using FilmMoi.Application.DataTransferObj.Actors;
+using FilmMoi.Application.DataTransferObj.Comments;
 using FilmMoi.Application.Interface.ReadOnly;
 using FilmMoi.Application.ValueObj.Extentions;
 using FilmMoi.Application.ValueObj.Pagination;
@@ -15,16 +16,16 @@ using System.Threading.Tasks;
 
 namespace FilmMoi.Infrastracture.Implement.Repository.ReadOnly
 {
-    public class ActorsReadOnlyRepository : Application.Interface.ReadOnly.IActorsReadOnlyRepository
+    public class ActorsROWPRepository : IReadOnlyWPRepository<ActorDto, ActorWithPaginationRequest>
     {
         private readonly FlimMoiContext _context;
         public readonly IMapper _mapper;
-        public ActorsReadOnlyRepository(FlimMoiContext context,IMapper mapper)
+        public ActorsROWPRepository(FlimMoiContext context,IMapper mapper)
         {
             _context = context;
             _mapper = mapper;   
         }
-        public async Task<PaginationResponse<ActorDto>> GetActorWithPaginationRequest(ActorWithPaginationRequest request, CancellationToken cancellationToken)
+        public async Task<PaginationResponse<ActorDto>> GetAll(ActorWithPaginationRequest request, CancellationToken cancellationToken)
         {
             var queryable = _context.Actors.AsNoTracking().Where(x => x.Deleted == false);
 
