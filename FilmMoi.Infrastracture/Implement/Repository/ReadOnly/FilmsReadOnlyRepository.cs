@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using FilmMoi.Application.DataTransferObj.Films;
 using FilmMoi.Application.Interface.ReadOnly;
 using FilmMoi.Application.ValueObj.Extentions;
@@ -43,9 +44,12 @@ namespace FilmMoi.Infrastructure.Implement.Repository.ReadOnly
 
         }
 
-        public Task<FilmDto?> GetById(Guid id, CancellationToken cancellationToken)
+        public async Task<FilmDto> GetById(Guid id, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+           var obj = await _db.Films.AsNoTracking().Where(x=>x.ID == id && !x.Deleted).FirstOrDefaultAsync(cancellationToken);
+           var result = _map.Map<FilmDto>(obj);
+           return result;
+
         }
     }
 }
