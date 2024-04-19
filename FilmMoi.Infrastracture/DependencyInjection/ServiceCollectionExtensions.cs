@@ -27,16 +27,12 @@ namespace FilmMoi.Infrastracture.DependencyInjection
                 // Configure your DbContext options here
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             });
-            #region DependencyInjection ReadOnly
+            
             services.AddTransient<IGenresReadOnlyRepository, GenresReadOnlyRepository>();
-            services.AddTransient<IReadOnlyRepository<FilmDto,FilmsWithPaginationRequest>, FilmsReadOnlyRepository>();
-
-            #endregion
-
-            #region DependencyInjection ReadWrite
+            services.AddTransient<IReadOnlyRepository<FilmDto, FilmsWithPaginationRequest>, FilmsReadOnlyRepository>();
             services.AddTransient<IReadWriteRepository<Genres>, GenresReadWriteRepository>();
             services.AddTransient<IReadWriteRepository<Films>, FilmsReadWriteRepository>();
-            #endregion
+       
 
             return services;
         }
