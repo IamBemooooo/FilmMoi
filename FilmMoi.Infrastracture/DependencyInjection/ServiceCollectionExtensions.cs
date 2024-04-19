@@ -1,5 +1,6 @@
 ﻿using FilmMoi.Application.DataTransferObj.Actors;
 using FilmMoi.Application.DataTransferObj.Comments;
+using FilmMoi.Application.DataTransferObj.Episodes;
 using FilmMoi.Application.DataTransferObj.Genres;
 using FilmMoi.Application.Interface.ReadOnly;
 using FilmMoi.Application.Interface.ReadWrite;
@@ -34,6 +35,8 @@ namespace FilmMoi.Infrastracture.DependencyInjection
             services.AddTransient<IReadOnlyWPRepository<ActorDto, ActorWithPaginationRequest>, ActorsROWPRepository>();//required
             services.AddTransient<IReadWriteRepository<Actors>, ActorsReadWriteRepository>();//required
             services.AddTransient<IReadOnlyWPRepository<CommentDto, CommentWithPaginationRequest>, CommentROWPRepository>();//required
+            services.AddTransient<IReadOnlyWPRepository<EpisodesDto, EpisodesWithPaginationRequest>, EpisodesReadOnlyRepository>();//required
+           
             return services;
         }
     }
