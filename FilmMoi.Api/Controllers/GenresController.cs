@@ -13,11 +13,11 @@ namespace FilmMoi.Api.Controllers
     [ApiController]
     public class GenresController : ControllerBase
     {
-        private readonly IGenresReadOnlyRepository _repoRead;
+        private readonly IReadOnlyNPRepository<GenreDto> _repoRead;
         private readonly IReadWriteRepository<Genres> _repoWrite;
         public readonly IMapper _mapper;
 
-        public GenresController(IGenresReadOnlyRepository repo, IMapper mapper, IReadWriteRepository<Genres> repoWrite)
+        public GenresController(IReadOnlyNPRepository<GenreDto> repo, IMapper mapper, IReadWriteRepository<Genres> repoWrite)
         {
             _repoRead = repo;
             _mapper = mapper;

@@ -12,10 +12,10 @@ namespace FilmMoi.Api.Controllers
     [ApiController]
     public class ActorsController : ControllerBase
     {
-        private readonly IActorsReadOnlyrepository _repoRead;
+        private readonly IReadOnlyWPRepository<ActorDto, ActorWithPaginationRequest> _repoRead;
         private readonly IReadWriteRepository<Actors> _repoWrite;
         public readonly IMapper _mapper;
-        public ActorsController(IActorsReadOnlyrepository repo, IMapper mapper, IReadWriteRepository<Actors> repoWrite)
+        public ActorsController(IReadOnlyWPRepository<ActorDto, ActorWithPaginationRequest> repo, IMapper mapper, IReadWriteRepository<Actors> repoWrite)
         {
             _repoRead = repo;
             _mapper = mapper;
@@ -27,7 +27,7 @@ namespace FilmMoi.Api.Controllers
         {
             try
             {
-                var lst = await _repoRead.GetActorWithPaginationRequest(request, cancellationToken);
+                var lst = await _repoRead.GetAll(request, cancellationToken);
                 return Ok(lst);
             }
             catch (Exception ex)
