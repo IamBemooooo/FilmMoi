@@ -1,4 +1,6 @@
-﻿using FilmMoi.Application.DataTransferObj.Films;
+﻿using FilmMoi.Application.DataTransferObj.Actors;
+using FilmMoi.Application.DataTransferObj.Comments;
+using FilmMoi.Application.DataTransferObj.Genres;
 using FilmMoi.Application.Interface.ReadOnly;
 using FilmMoi.Application.Interface.ReadWrite;
 using FilmMoi.Domain.Models;
@@ -22,12 +24,16 @@ namespace FilmMoi.Infrastracture.DependencyInjection
                 // Configure your DbContext options here
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             });
-            services.AddTransient<IGenresReadOnlyRepository, GenresReadOnlyRepository>();//required
+            //services.AddTransient<ILocalizationService, LocalizationService>();
+            //services.AddTransient<IUserReadOnlyRepoisitory, UserReadOnlyRepoisitory>();
+            //services.AddTransient<IUserReadWriteRepoisitory, UserReadWriteRepoisitory>();
+            //services.AddTransient<IExampleReadOnlyRepository, ExampleReadOnlyRepository>();
+            //services.AddTransient<IExampleReadWriteRepository, ExampleReadWriteRepository>();
+            services.AddTransient<IReadOnlyNPRepository<GenreDto>, GenresReadOnlyRepository>();//required
             services.AddTransient<IReadWriteRepository<Genres>, GenresReadWriteRepository>();//required
-            services.AddTransient<IActorsReadOnlyrepository, ActorsReadOnlyRepository>();//required
+            services.AddTransient<IReadOnlyWPRepository<ActorDto, ActorWithPaginationRequest>, ActorsROWPRepository>();//required
             services.AddTransient<IReadWriteRepository<Actors>, ActorsReadWriteRepository>();//required
-            services.AddTransient<IReadWriteRepository<Films>, FilmsReadWriteRepository>();//required
-            services.AddTransient<IReadOnlyRepository<FilmDto,FilmsWithPaginationRequest>, FilmsReadOnlyRepository>();//required
+            services.AddTransient<IReadOnlyWPRepository<CommentDto, CommentWithPaginationRequest>, CommentROWPRepository>();//required
             return services;
         }
     }
