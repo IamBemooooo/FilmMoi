@@ -12,10 +12,10 @@ namespace FilmMoi.Api.Controllers
     [ApiController]
     public class ActorsController : ControllerBase
     {
-        private readonly IActorsReadOnlyrepository _repoRead;
+        private readonly IActorsReadOnlyRepository _repoRead;
         private readonly IReadWriteRepository<Actors> _repoWrite;
         public readonly IMapper _mapper;
-        public ActorsController(IActorsReadOnlyrepository repo, IMapper mapper, IReadWriteRepository<Actors> repoWrite)
+        public ActorsController(IActorsReadOnlyRepository repo, IMapper mapper, IReadWriteRepository<Actors> repoWrite)
         {
             _repoRead = repo;
             _mapper = mapper;

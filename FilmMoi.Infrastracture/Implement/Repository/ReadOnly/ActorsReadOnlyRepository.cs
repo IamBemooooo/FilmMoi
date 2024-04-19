@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace FilmMoi.Infrastracture.Implement.Repository.ReadOnly
 {
-    public class ActorsReadOnlyRepository : IActorsReadOnlyrepository
+    public class ActorsReadOnlyRepository : Application.Interface.ReadOnly.IActorsReadOnlyRepository
     {
         private readonly FlimMoiContext _context;
         public readonly IMapper _mapper;

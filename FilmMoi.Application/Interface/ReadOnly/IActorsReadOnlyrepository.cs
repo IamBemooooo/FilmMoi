@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FilmMoi.Application.Interface.ReadOnly
 {
-    public interface IActorsReadOnlyrepository
+    public interface IActorsReadOnlyRepository
     {
         public Task<ActorDto?> GetById(Guid id, CancellationToken cancellationToken);
 
