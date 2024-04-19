@@ -28,7 +28,6 @@ namespace FilmMoi.Infrastracture.DependencyInjection
             services.AddTransient<IReadWriteRepository<Genres>, GenresReadWriteRepository>();//required
             services.AddTransient<IActorsReadOnlyrepository, ActorsReadOnlyRepository>();//required
             services.AddTransient<IReadWriteRepository<Actors>, ActorsReadWriteRepository>();//required
-
             return services;
         }
     }

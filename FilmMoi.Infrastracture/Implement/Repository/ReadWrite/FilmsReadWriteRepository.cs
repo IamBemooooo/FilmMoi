@@ -42,9 +42,7 @@ namespace FilmMoi.Infrastructure.Implement.Repository.ReadWrite
 
                 throw new Exception(ex.Message);
             }
-        }
-
-       
+        }     
         public async  Task<bool> Delete(Guid id, Films? data, CancellationToken cancellationToken)
         {
             try
