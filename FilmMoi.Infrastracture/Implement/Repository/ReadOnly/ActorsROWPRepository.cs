@@ -20,20 +20,19 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadOnly
     {
         private readonly FlimMoiContext _context;
         public readonly IMapper _mapper;
-        public ActorsROWPRepository(FlimMoiContext context,IMapper mapper)
+        public ActorsROWPRepository(FlimMoiContext context, IMapper mapper)
         {
             _context = context;
-            _mapper = mapper;   
+            _mapper = mapper;
         }
         public async Task<PaginationResponse<ActorDto>> GetAll(ActorWithPaginationRequest request, CancellationToken cancellationToken)
         {
-            var queryable = _context.Actors.AsNoTracking().Where(x => x.Deleted == false);
-
-            // check if search field is null
-            if (!string.IsNullOrWhiteSpace(request.Name))
-            {
-                queryable = queryable.Where(c => c.Name.Contains(request.Name!));
-            }
+            var queryable = from a in _context.Actors.AsNoTracking().Where(x => x.Deleted == false)
+                            join b in _context.FilmActors.AsNoTracking() on a.ID equals b.ID_ACtor
+                            where (!string.IsNullOrEmpty(request.Name) || request.ID != null) ?
+                            b.ID_Film == request.ID || a.Name.Contains(request.Name!) : 1 == 1
+                            select a;
+                            
 
             var result = await queryable.PaginateAsync<Actors, ActorDto>(request, _mapper, cancellationToken);
 

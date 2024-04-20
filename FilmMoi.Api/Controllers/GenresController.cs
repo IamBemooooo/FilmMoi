@@ -25,11 +25,11 @@ namespace FilmMoi.Api.Controllers
         }
 
         [HttpGet("name")]
-        public async Task<IActionResult> GetAll(string? name, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetAll(string? name,Guid id, CancellationToken cancellationToken)
         {
             try
             {
-                var lst = await _repoRead.GetAllAsync(name, cancellationToken);
+                var lst = await _repoRead.GetAllAsync(name,id, cancellationToken);
                 return Ok(lst);
             }
             catch (Exception ex) 
