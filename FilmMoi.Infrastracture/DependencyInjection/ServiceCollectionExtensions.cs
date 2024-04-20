@@ -35,6 +35,8 @@ namespace FilmMoi.Infrastracture.DependencyInjection
             services.AddTransient<IReadWriteRepository<Actors>, ActorsReadWriteRepository>();//required
             services.AddTransient<IReadOnlyWPRepository<CommentDto, CommentWithPaginationRequest>, CommentROWPRepository>();//required
             services.AddTransient<IReadWriteRepository<Comments>, CommentReadWriteRepository>();//required
+            services.AddTransient<IReadWriteRepository<FilmActors>, FilmActorsReadWriteRepository>();//required
+            services.AddTransient<IReadWriteRepository<GenreFilms>, GenreFilmsReadWriteRepository>();//required
             return services;
         }
     }
