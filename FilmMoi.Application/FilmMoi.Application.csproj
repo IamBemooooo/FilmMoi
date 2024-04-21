@@ -15,4 +15,8 @@
     <ProjectReference Include="..\FilmMoi.Domain\FilmMoi.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataTransferObj\WatchedFilms\" />
+  </ItemGroup>
+
 </Project>
