@@ -38,7 +38,7 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadOnly
                               ID = a.ID,
                               Comment_text = a.Comment_text,
                               ID_User = a.ID_User,
-                              UserName = a.UserName,
+                              UserName = b.UserName,
                           }).ToList();
             return new PaginationResponse<CommentDto>()
             {

@@ -9,6 +9,7 @@ namespace FilmMoi.Application.DataTransferObj.Actors
 {
     public class ActorWithPaginationRequest : PaginationRequest
     {
+        public Guid? ID { get; set; }
         public string? Name { get; set; }
     }
 }
