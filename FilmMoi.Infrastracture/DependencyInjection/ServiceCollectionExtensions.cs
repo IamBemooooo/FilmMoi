@@ -1,7 +1,8 @@
-﻿using FilmMoi.Application.DataTransferObj.Actors;
+﻿﻿using FilmMoi.Application.DataTransferObj.Actors;
 using FilmMoi.Application.DataTransferObj.Comments;
 using FilmMoi.Application.DataTransferObj.Episodes;
 using FilmMoi.Application.DataTransferObj.Genres;
+using FilmMoi.Application.DataTransferObj.Ratings;
 using FilmMoi.Application.Interface.ReadOnly;
 using FilmMoi.Application.Interface.ReadWrite;
 using FilmMoi.Domain.Models;
@@ -36,7 +37,14 @@ namespace FilmMoi.Infrastracture.DependencyInjection
             services.AddTransient<IReadWriteRepository<Actors>, ActorsReadWriteRepository>();//required
             services.AddTransient<IReadOnlyWPRepository<CommentDto, CommentWithPaginationRequest>, CommentROWPRepository>();//required
             services.AddTransient<IReadWriteRepository<Comments>, CommentReadWriteRepository>();//required
+<<<<<<< master
+            services.AddTransient<IReadWriteRepository<FilmActors>, FilmActorsReadWriteRepository>();//required
+            services.AddTransient<IReadWriteRepository<GenreFilms>, GenreFilmsReadWriteRepository>();//required
+            services.AddTransient<IReadOnlyNPRepository<RatingDto>, RatingReadOnlyRepository>();//required
+            services.AddTransient<IReadWriteRepository<Ratings>, RatingReadWriteRepository>();//required
+=======
             services.AddTransient<IReadOnlyWPRepository<EpisodesDto, EpisodesWithPaginationRequest>, EpisodesReadOnlyRepository>();//required
+>>>>>>> dangs_1
             return services;
         }
     }
