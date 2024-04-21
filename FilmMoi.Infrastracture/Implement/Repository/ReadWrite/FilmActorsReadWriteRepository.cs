@@ -25,10 +25,15 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadWrite
         {
             try
             {
-                data.CreatedTime = DateTime.UtcNow;
-                _context.FilmActors.Add(data);
-                _context.SaveChanges();
-                return await Task.FromResult(true);
+                var obj = await _context.FilmActors.FirstOrDefaultAsync(x => x.ID_ACtor == data.ID_ACtor && x.ID_Film == data.ID_Film);
+                if (obj == null)
+                {
+                    data.CreatedTime = DateTime.UtcNow;
+                    _context.FilmActors.Add(data);
+                    _context.SaveChanges();
+                    return await Task.FromResult(true);
+                }
+                return await Task.FromResult(false);
             }
             catch
             {
