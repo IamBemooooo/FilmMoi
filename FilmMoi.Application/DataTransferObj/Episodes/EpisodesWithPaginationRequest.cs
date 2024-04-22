@@ -9,7 +9,6 @@ namespace FilmMoi.Application.DataTransferObj.Episodes
 {
     public class EpisodesWithPaginationRequest : PaginationRequest
     {
-        
         public Guid? Id { get; set; }
     }
 }

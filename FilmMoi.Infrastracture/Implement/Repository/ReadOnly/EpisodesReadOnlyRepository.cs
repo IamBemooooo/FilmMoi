@@ -27,7 +27,7 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadOnly
 
         public async Task<PaginationResponse<EpisodesDto>> GetAll(EpisodesWithPaginationRequest request, CancellationToken cancellationToken)
         {
-            var query = _context.Episodes.AsNoTracking().Where(x=>x.ID == request.Id).Include(x=>x.Film);
+            var query = _context.Episodes.AsNoTracking().Where(x=>x.ID_Film == request.Id).Include(x=>x.Film);
             var result = await query.PaginateAsync<Episodes, EpisodesDto>(request, _map, cancellationToken);
             result.Data = (from a in query
                            select new EpisodesDto
@@ -41,10 +41,10 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadOnly
                            }).ToList();
             return new PaginationResponse<EpisodesDto>()
             {
-                Data = result.Data,
                 HasNext = result.HasNext,
                 PageSize = result.PageSize,
                 PageNumber = result.PageNumber,
+                Data = result.Data,
             };
         }
 
