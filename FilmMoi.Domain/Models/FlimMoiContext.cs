@@ -23,7 +23,7 @@ public partial class FlimMoiContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
 
-        optionsBuilder.UseSqlServer("Server=.;Database=FlimMoi;Trusted_Connection=True;TrustServerCertificate=True");
+        optionsBuilder.UseSqlServer("Server=SURINRIN\\SQLEXPRESS01;Database=FlimMoi;Trusted_Connection=True;TrustServerCertificate=True");
         //optionsBuilder.UseSqlServer("Server=.;Database=FlimMoi;Trusted_Connection=True;TrustServerCertificate=True");
     }
 
