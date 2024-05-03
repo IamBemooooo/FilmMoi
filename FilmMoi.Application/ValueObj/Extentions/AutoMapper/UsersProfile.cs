@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using FilmMoi.Application.DataTransferObj.Users;
+using FilmMoi.Domain.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,11 @@ namespace FilmMoi.Application.ValueObj.Extentions.AutoMapper
     {
         public UsersProfile()
         {
-            //CreateMap<>();
+            CreateMap<UserDto,Users>().ReverseMap();
+            CreateMap<UsersCreateRequest,Users>();
+            CreateMap<UserDeleteRequest,Users>();
+            CreateMap<UsersUpdateRequest,Users>();
+
         }
     }
 }
