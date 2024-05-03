@@ -26,7 +26,7 @@ namespace FilmMoi.Infrastructure.Implement.Repository.ReadOnly
             var query = _db.Films.AsNoTracking();
             if (!string.IsNullOrWhiteSpace(obj.Name))
             {
-                query.Where(x => x.Name.Contains(obj.Name));
+               query = query.Where(x => x.Name.Contains(obj.Name));
             }
             query.OrderBy(x => x.Status);
             var result = await query.PaginateAsync<Films, FilmDto>(obj, _map, cancellationToken);
