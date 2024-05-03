@@ -4,6 +4,11 @@ using FilmMoi.Application.DataTransferObj.Episodes;
 using FilmMoi.Application.DataTransferObj.Genres;
 using FilmMoi.Application.DataTransferObj.Ratings;
 using FilmMoi.Application.DataTransferObj.Users;
+<<<<<<< HEAD
+using FilmMoi.Application.DataTransferObj.WatchedFilms;
+=======
+using FilmMoi.Application.DataTransferObj.Users;
+>>>>>>> 7a811ec38ff0858f646517adea9ccac39c5d9532
 using FilmMoi.Application.Interface.ReadOnly;
 using FilmMoi.Application.Interface.ReadWrite;
 using FilmMoi.Application.Interface.Utilities;
@@ -48,8 +53,13 @@ namespace FilmMoi.Infrastracture.DependencyInjection
             services.AddTransient<IReadOnlyWPRepository<UserDto,UsersWithPaginationRequest>, UserReadOnlyRepository>();//required
             services.AddTransient<IReadWriteRepository<Users>, UserReadWriteRepository>();//required
             services.AddTransient<IReadWriteRepository<Episodes>, EpisodesReadWriteRepository>();//required
+<<<<<<< HEAD
+            services.AddTransient<IReadOnlyNPRepository<WatchedFilmDto>, WatchedFilmsReadOnlyRepository>();//required
+            services.AddTransient<IReadWriteRepository<WatchedFilms>, WatchedFilmsReadWriteRepository>();//required
+=======
             services.AddTransient<IUsersUtilitiesRepository, UsersUtilitiesRepository>();//required
 
+>>>>>>> 7a811ec38ff0858f646517adea9ccac39c5d9532
             return services;
         }
     }
