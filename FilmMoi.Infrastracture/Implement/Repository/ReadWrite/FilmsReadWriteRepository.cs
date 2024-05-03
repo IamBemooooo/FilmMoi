@@ -78,7 +78,7 @@ namespace FilmMoi.Infrastructure.Implement.Repository.ReadWrite
                 throw new Exception(ex.Message);
             }
         }
-        public async Task<Films?> GetById(Guid id, CancellationToken cancellationToken)
+        private async Task<Films?> GetById(Guid id, CancellationToken cancellationToken)
         {
             var obj = await _db.Films.FirstOrDefaultAsync(x => x.ID == id && !x.Deleted);
             return obj;
