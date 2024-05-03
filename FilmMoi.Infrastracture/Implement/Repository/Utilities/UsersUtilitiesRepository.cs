@@ -13,7 +13,7 @@ namespace FilmMoi.Infrastracture.Implement.Repository.Utilities
     public class UsersUtilitiesRepository : IUsersUtilitiesRepository
     {
         private readonly FlimMoiContext _db;
-
+        private string ConfirmEmail = "";
         public Task<bool> BanAcc(Guid id, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
@@ -38,8 +38,7 @@ namespace FilmMoi.Infrastracture.Implement.Repository.Utilities
 
         public async Task<bool> ForgotPassword(ForgotPasswordRequest request, CancellationToken cancellationToken)
         {
-            var seed = SeedGmail(request.Email);
-            if (request.EmailConfirm == seed)
+            if (request.EmailConfirm == ConfirmEmail)
             {
                 var obj = await _db.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Email == request.Email);
                 obj.PasswordHash = Hash.EncryptPassword(request.NewPassword);
@@ -60,8 +59,8 @@ namespace FilmMoi.Infrastracture.Implement.Repository.Utilities
         {
             throw new NotImplementedException();
         }
-
-        private string SeedGmail(string email)
+       
+        public bool SeedGmail(string email)
         {
             var mail = "dangnguyen300708@gmail.com";
             var appPassword = "zpbp twvl pzoi ifcf"; // Mã xác thực một lần tạo từ tài khoản Gmail của bạn
@@ -84,7 +83,8 @@ namespace FilmMoi.Infrastracture.Implement.Repository.Utilities
                 client.Send(emailMessage);
                 client.Disconnect(true);
             }
-            return message.ToString();
+            ConfirmEmail = message.ToString();
+            return true;
         }
     }
 }
