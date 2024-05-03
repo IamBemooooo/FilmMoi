@@ -3,12 +3,20 @@ using FilmMoi.Application.DataTransferObj.Comments;
 using FilmMoi.Application.DataTransferObj.Episodes;
 using FilmMoi.Application.DataTransferObj.Genres;
 using FilmMoi.Application.DataTransferObj.Ratings;
+using FilmMoi.Application.DataTransferObj.Users;
+<<<<<<< HEAD
+using FilmMoi.Application.DataTransferObj.WatchedFilms;
+=======
+using FilmMoi.Application.DataTransferObj.Users;
+>>>>>>> 7a811ec38ff0858f646517adea9ccac39c5d9532
 using FilmMoi.Application.Interface.ReadOnly;
 using FilmMoi.Application.Interface.ReadWrite;
+using FilmMoi.Application.Interface.Utilities;
 using FilmMoi.Domain.Models;
 using FilmMoi.Domain.Models.Entities;
 using FilmMoi.Infrastracture.Implement.Repository.ReadOnly;
 using FilmMoi.Infrastracture.Implement.Repository.ReadWrite;
+using FilmMoi.Infrastracture.Implement.Repository.Utilities;
 using FilmMoi.Infrastructure.Implement.Repository.ReadOnly;
 using FilmMoi.Infrastructure.Implement.Repository.ReadWrite;
 using Microsoft.EntityFrameworkCore;
@@ -42,7 +50,16 @@ namespace FilmMoi.Infrastracture.DependencyInjection
             services.AddTransient<IReadOnlyNPRepository<RatingDto>, RatingReadOnlyRepository>();//required
             services.AddTransient<IReadWriteRepository<Ratings>, RatingReadWriteRepository>();//required
             services.AddTransient<IReadOnlyWPRepository<EpisodesDto,EpisodesWithPaginationRequest>, EpisodesReadOnlyRepository>();//required
+            services.AddTransient<IReadOnlyWPRepository<UserDto,UsersWithPaginationRequest>, UserReadOnlyRepository>();//required
+            services.AddTransient<IReadWriteRepository<Users>, UserReadWriteRepository>();//required
             services.AddTransient<IReadWriteRepository<Episodes>, EpisodesReadWriteRepository>();//required
+<<<<<<< HEAD
+            services.AddTransient<IReadOnlyNPRepository<WatchedFilmDto>, WatchedFilmsReadOnlyRepository>();//required
+            services.AddTransient<IReadWriteRepository<WatchedFilms>, WatchedFilmsReadWriteRepository>();//required
+=======
+            services.AddTransient<IUsersUtilitiesRepository, UsersUtilitiesRepository>();//required
+
+>>>>>>> 7a811ec38ff0858f646517adea9ccac39c5d9532
             return services;
         }
     }
