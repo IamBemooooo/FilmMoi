@@ -18,9 +18,9 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadOnly
 {
     public class WatchedFilmsReadOnlyRepository : IReadOnlyNPRepository<WatchedFilmDto>
     {
-        private readonly FlimMoiContext _context;
+        private readonly FilmMoiContext _context;
         public readonly IMapper _mapper;
-        public WatchedFilmsReadOnlyRepository(FlimMoiContext context, IMapper mapper)
+        public WatchedFilmsReadOnlyRepository(FilmMoiContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

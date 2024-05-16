@@ -8,9 +8,9 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadWrite
 {
     public class WatchedFilmsReadWriteRepository : IReadWriteRepository<WatchedFilms>
     {
-        private FlimMoiContext _context;
+        private FilmMoiContext _context;
         public IMapper _mapper;
-        public WatchedFilmsReadWriteRepository(FlimMoiContext context, IMapper mapper)
+        public WatchedFilmsReadWriteRepository(FilmMoiContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

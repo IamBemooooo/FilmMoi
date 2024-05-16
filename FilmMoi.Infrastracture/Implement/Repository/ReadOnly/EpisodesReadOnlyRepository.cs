@@ -16,12 +16,12 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadOnly
 {
     public class EpisodesReadOnlyRepository : IReadOnlyWPRepository<EpisodesDto, EpisodesWithPaginationRequest>
     {
-        private readonly FlimMoiContext _context;
+        private readonly FilmMoiContext _context;
         private readonly IMapper _map;
 
         public EpisodesReadOnlyRepository(IMapper map)
         {
-            _context = new FlimMoiContext();
+            _context = new FilmMoiContext();
             _map = map;
         }
 

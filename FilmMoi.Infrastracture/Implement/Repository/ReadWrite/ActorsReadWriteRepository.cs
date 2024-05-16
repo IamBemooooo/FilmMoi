@@ -12,9 +12,9 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadWrite
 {
     public class ActorsReadWriteRepository : IReadWriteRepository<Actors>
     {
-        private FlimMoiContext _context;
+        private FilmMoiContext _context;
         public IMapper _mapper;
-        public ActorsReadWriteRepository(FlimMoiContext context, IMapper mapper)
+        public ActorsReadWriteRepository(FilmMoiContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

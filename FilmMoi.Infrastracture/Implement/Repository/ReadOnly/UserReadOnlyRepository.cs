@@ -16,12 +16,12 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadOnly
 {
     public class UserReadOnlyRepository : IReadOnlyWPRepository<UserDto, UsersWithPaginationRequest>
     {
-        private readonly FlimMoiContext _db;
+        private readonly FilmMoiContext _db;
         private readonly IMapper _map;
 
         public UserReadOnlyRepository(IMapper map)
         {
-            _db = new FlimMoiContext();
+            _db = new FilmMoiContext();
             _map = map;
         }
 
