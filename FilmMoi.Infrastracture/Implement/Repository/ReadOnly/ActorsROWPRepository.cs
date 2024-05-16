@@ -18,9 +18,9 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadOnly
 {
     public class ActorsROWPRepository : IReadOnlyWPRepository<ActorDto, ActorWithPaginationRequest>
     {
-        private readonly FlimMoiContext _context;
+        private readonly FilmMoiContext _context;
         public readonly IMapper _mapper;
-        public ActorsROWPRepository(FlimMoiContext context, IMapper mapper)
+        public ActorsROWPRepository(FilmMoiContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

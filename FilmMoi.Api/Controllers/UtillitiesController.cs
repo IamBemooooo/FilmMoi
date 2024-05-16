@@ -19,7 +19,7 @@ namespace FilmMoi.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]ForgotPasswordRequest request,CancellationToken cancellationToken)
         {
-            var result = await _repo.SeedGmail(request, cancellationToken);
+            var result = await _repo.SeedGmail(request.Email);
             return Ok(result);
         }
     }

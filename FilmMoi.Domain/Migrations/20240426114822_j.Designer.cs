@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FilmMoi.Domain.Migrations
 {
-    [DbContext(typeof(FlimMoiContext))]
+    [DbContext(typeof(FilmMoiContext))]
     [Migration("20240426114822_j")]
     partial class j
     {

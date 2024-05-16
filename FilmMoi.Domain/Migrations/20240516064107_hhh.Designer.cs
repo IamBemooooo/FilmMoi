@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FilmMoi.Domain.Migrations
 {
     [DbContext(typeof(FilmMoiContext))]
-    [Migration("20240417102926_a")]
-    partial class a
+    [Migration("20240516064107_hhh")]
+    partial class hhh
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -75,7 +75,7 @@ namespace FilmMoi.Domain.Migrations
                         new
                         {
                             ID = new Guid("7677bb7f-f9aa-4738-a61d-b52427d9dd62"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 17, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(3949), new TimeSpan(0, 7, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 13, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2722), new TimeSpan(0, 7, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Dob = new DateTime(1997, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -87,7 +87,7 @@ namespace FilmMoi.Domain.Migrations
                         new
                         {
                             ID = new Guid("794b3996-aac6-437e-87c6-197fde46149d"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 17, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(3993), new TimeSpan(0, 7, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 13, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2763), new TimeSpan(0, 7, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Dob = new DateTime(1998, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -99,7 +99,7 @@ namespace FilmMoi.Domain.Migrations
                         new
                         {
                             ID = new Guid("e7ec9630-52da-4e31-9700-afe4627d672a"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 17, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(3996), new TimeSpan(0, 7, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 13, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2766), new TimeSpan(0, 7, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Dob = new DateTime(1990, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -110,8 +110,8 @@ namespace FilmMoi.Domain.Migrations
                         },
                         new
                         {
-                            ID = new Guid("e4e55994-0c7d-44ec-b033-337c95797d35"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 17, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(3999), new TimeSpan(0, 7, 0, 0, 0)),
+                            ID = new Guid("6d2b7703-081a-4355-a1ef-5adf9c2ba9ce"),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 13, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2785), new TimeSpan(0, 7, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Dob = new DateTime(1979, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -122,8 +122,8 @@ namespace FilmMoi.Domain.Migrations
                         },
                         new
                         {
-                            ID = new Guid("25801504-21c3-4ec1-9f4c-2a9941b5688e"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 17, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4001), new TimeSpan(0, 7, 0, 0, 0)),
+                            ID = new Guid("8a1b29ec-b125-4d26-a4ad-d710ff3122f5"),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 13, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2788), new TimeSpan(0, 7, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Dob = new DateTime(1984, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -245,16 +245,16 @@ namespace FilmMoi.Domain.Migrations
                     b.HasData(
                         new
                         {
-                            ID = new Guid("142afd15-5af3-4856-bb98-c271a0320318"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 10, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4167), new TimeSpan(0, 0, 0, 0, 0)),
+                            ID = new Guid("452a20da-ceb1-4bc6-a7d4-cfaa3ce32386"),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2918), new TimeSpan(0, 0, 0, 0, 0)),
                             ID_ACtor = new Guid("7677bb7f-f9aa-4738-a61d-b52427d9dd62"),
                             ID_Film = new Guid("98236a61-4d91-42fe-b956-fd64fb14ddc5"),
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
-                            ID = new Guid("fdd7731e-56c5-4dd2-a1d6-c11d9bc0e917"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 10, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4181), new TimeSpan(0, 0, 0, 0, 0)),
+                            ID = new Guid("d04d492e-d1ad-42d0-83fa-45a62d562909"),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2922), new TimeSpan(0, 0, 0, 0, 0)),
                             ID_ACtor = new Guid("794b3996-aac6-437e-87c6-197fde46149d"),
                             ID_Film = new Guid("98236a61-4d91-42fe-b956-fd64fb14ddc5"),
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0))
@@ -325,7 +325,7 @@ namespace FilmMoi.Domain.Migrations
                         {
                             ID = new Guid("98236a61-4d91-42fe-b956-fd64fb14ddc5"),
                             AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 10, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4039), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2820), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Anime cute",
@@ -341,7 +341,7 @@ namespace FilmMoi.Domain.Migrations
                         {
                             ID = new Guid("d8a2e1e2-5d8c-4c4c-bf5f-9a7d32de0a2a"),
                             AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 10, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4053), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2832), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Movie cute",
@@ -357,7 +357,7 @@ namespace FilmMoi.Domain.Migrations
                         {
                             ID = new Guid("f5f7a014-9d4e-4c2e-a0b6-9b063f2e8f55"),
                             AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 10, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4057), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2836), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Movie cute",
@@ -373,7 +373,7 @@ namespace FilmMoi.Domain.Migrations
                         {
                             ID = new Guid("7b6c8b8f-70da-4e89-9971-2f1a8e7f9b56"),
                             AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 10, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4063), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2839), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Movie cute",
@@ -389,7 +389,7 @@ namespace FilmMoi.Domain.Migrations
                         {
                             ID = new Guid("3d9a9d16-1b45-4a9b-8f7e-e3f0e0d8e3b9"),
                             AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 10, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4066), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2843), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Movie cute",
@@ -438,16 +438,16 @@ namespace FilmMoi.Domain.Migrations
                     b.HasData(
                         new
                         {
-                            ID = new Guid("4a58988c-86a0-4de5-93c5-605b22dde61f"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 10, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4206), new TimeSpan(0, 0, 0, 0, 0)),
+                            ID = new Guid("f3a809ce-6dd0-47ca-a374-1122bedf7abd"),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2941), new TimeSpan(0, 0, 0, 0, 0)),
                             ID_Film = new Guid("98236a61-4d91-42fe-b956-fd64fb14ddc5"),
                             ID_Genre = new Guid("cd19b97d-2377-41bb-99dc-7db8314ff35e"),
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
-                            ID = new Guid("988a90ec-31a6-4c82-a20b-76d62b6e6cb9"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 10, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4214), new TimeSpan(0, 0, 0, 0, 0)),
+                            ID = new Guid("a50f6fa6-1e4f-48c6-bf6d-0f6f93771cbb"),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2945), new TimeSpan(0, 0, 0, 0, 0)),
                             ID_Film = new Guid("d8a2e1e2-5d8c-4c4c-bf5f-9a7d32de0a2a"),
                             ID_Genre = new Guid("836c97c0-2ad2-4cd9-b821-537a8a872354"),
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0))
@@ -493,7 +493,7 @@ namespace FilmMoi.Domain.Migrations
                         new
                         {
                             ID = new Guid("cd19b97d-2377-41bb-99dc-7db8314ff35e"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 10, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4097), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2865), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             GenreName = "Anime",
@@ -502,7 +502,7 @@ namespace FilmMoi.Domain.Migrations
                         new
                         {
                             ID = new Guid("088f52ea-8a6d-4bb5-8bb8-2cd647e9b0f4"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 10, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4100), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2869), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             GenreName = "Chinese",
@@ -511,7 +511,7 @@ namespace FilmMoi.Domain.Migrations
                         new
                         {
                             ID = new Guid("52048ea3-02c1-4c1c-81e0-0e5de6b16b07"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 10, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4102), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2870), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             GenreName = "Korea",
@@ -520,7 +520,7 @@ namespace FilmMoi.Domain.Migrations
                         new
                         {
                             ID = new Guid("836c97c0-2ad2-4cd9-b821-537a8a872354"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 10, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4104), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2872), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             GenreName = "Romantic",
@@ -529,7 +529,7 @@ namespace FilmMoi.Domain.Migrations
                         new
                         {
                             ID = new Guid("d5c9f4da-131e-47b6-b41f-a91409bb5d3a"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 10, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4106), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2873), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             GenreName = "Action",
@@ -571,7 +571,7 @@ namespace FilmMoi.Domain.Migrations
                         {
                             ID_User = new Guid("f69cd789-4c44-401c-a021-5b6742af2279"),
                             ID_Film = new Guid("98236a61-4d91-42fe-b956-fd64fb14ddc5"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 10, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4139), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2898), new TimeSpan(0, 0, 0, 0, 0)),
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Rating = 5
                         },
@@ -579,7 +579,7 @@ namespace FilmMoi.Domain.Migrations
                         {
                             ID_User = new Guid("f69cd789-4c44-401c-a021-5b6742af2279"),
                             ID_Film = new Guid("d8a2e1e2-5d8c-4c4c-bf5f-9a7d32de0a2a"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 4, 17, 10, 29, 26, 441, DateTimeKind.Unspecified).AddTicks(4142), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2902), new TimeSpan(0, 0, 0, 0, 0)),
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Rating = 5
                         });
@@ -633,6 +633,15 @@ namespace FilmMoi.Domain.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ConfirmCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTimeOffset>("CreatedTime")
+                        .HasColumnType("datetimeoffset");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
@@ -643,6 +652,12 @@ namespace FilmMoi.Domain.Migrations
                         .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<Guid?>("ModifiedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTimeOffset>("ModifiedTime")
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("NormalizedEmail")
@@ -666,6 +681,9 @@ namespace FilmMoi.Domain.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTimeOffset?>("SentTime")
+                        .HasColumnType("datetimeoffset");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
@@ -684,9 +702,11 @@ namespace FilmMoi.Domain.Migrations
                             Id = new Guid("e24d664c-e45f-4ddb-8743-04812e1ca9f5"),
                             AccessFailedCount = 0,
                             ConcurrencyStamp = "f6b25b9e-5ef2-4aaf-9e9b-7ae4fdac2e2b",
+                            CreatedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Email = "dangs3007@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = true,
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             NormalizedEmail = "DANGS3007@GMAIL.COM",
                             NormalizedUserName = "DANGS",
                             PasswordHash = "AQAAAAEAACcQAAAAEKY9X1b1Y2X9z8x2C9jzFz2JbYfhLzzKm3Q/7+YpY6XjyONn6m8fJ6iM0Wb8PfFy1A==",
@@ -702,9 +722,11 @@ namespace FilmMoi.Domain.Migrations
                             Id = new Guid("84f0e463-e887-4143-a994-61ca73c4793c"),
                             AccessFailedCount = 0,
                             ConcurrencyStamp = "92ed2915-6aa0-4a86-8e7a-8f828d8d9e1f",
+                            CreatedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Email = "thend@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = true,
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             NormalizedEmail = "THEND@GMAIL.COM",
                             NormalizedUserName = "THEND",
                             PasswordHash = "AQAAAAEAACcQAAAAEKY9X1b1Y2X9z8x2C9jzFz2JbYfhLzzKm3Q/7+YpY6XjyONn6m8fJ6iM0Wb8PfFy1A==",
@@ -720,9 +742,11 @@ namespace FilmMoi.Domain.Migrations
                             Id = new Guid("f69cd789-4c44-401c-a021-5b6742af2279"),
                             AccessFailedCount = 0,
                             ConcurrencyStamp = "7d1c77f2-9b7e-4f5d-b0e6-3d13c7a4cc09",
+                            CreatedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Email = "dangs123@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = true,
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             NormalizedEmail = "DANGS123@GMAIL.COM",
                             NormalizedUserName = "CLIENTEST",
                             PasswordHash = "AQAAAAEAACcQAAAAEKY9X1b1Y2X9z8x2C9jzFz2JbYfhLzzKm3Q/7+YpY6XjyONn6m8fJ6iM0Wb8PfFy1A==",

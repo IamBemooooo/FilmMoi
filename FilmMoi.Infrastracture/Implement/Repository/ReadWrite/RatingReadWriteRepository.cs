@@ -14,9 +14,9 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadWrite
     public class RatingReadWriteRepository : IReadWriteRepository<Ratings>
     {
 
-        private FlimMoiContext _context;
+        private FilmMoiContext _context;
         public IMapper _mapper;
-        public RatingReadWriteRepository(FlimMoiContext context, IMapper mapper)
+        public RatingReadWriteRepository(FilmMoiContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

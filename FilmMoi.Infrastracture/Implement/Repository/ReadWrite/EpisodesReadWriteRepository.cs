@@ -13,11 +13,11 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadWrite
 {
     public class EpisodesReadWriteRepository : IReadWriteRepository<Episodes>
     {
-        private readonly FlimMoiContext _db;
+        private readonly FilmMoiContext _db;
         private readonly IMapper _map;
         public EpisodesReadWriteRepository(IMapper map)
         {
-            _db = new FlimMoiContext();
+            _db = new FilmMoiContext();
             _map = map;
         }
         public async Task<bool> Create(Episodes data, CancellationToken cancellationToken)

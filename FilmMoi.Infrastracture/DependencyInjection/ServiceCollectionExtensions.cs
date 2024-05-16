@@ -29,7 +29,7 @@ namespace FilmMoi.Infrastracture.DependencyInjection
     {
         public static IServiceCollection AddEventBus(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<FlimMoiContext>(options =>
+            services.AddDbContext<FilmMoiContext>(options =>
             {
                 // Configure your DbContext options here
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
