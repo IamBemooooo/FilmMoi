@@ -8,14 +8,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FilmMoi.Domain.Models;
 
-public partial class FlimMoiContext : DbContext
+public partial class FilmMoiContext : DbContext
 {
-    public FlimMoiContext()
+    public FilmMoiContext()
     {
 
     }
 
-    public FlimMoiContext(DbContextOptions<FlimMoiContext> options) : base(options)
+    public FilmMoiContext(DbContextOptions<FilmMoiContext> options) : base(options)
     {
 
     }
@@ -23,7 +23,7 @@ public partial class FlimMoiContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
 
-        optionsBuilder.UseSqlServer("Server=.;Database=FlimMoi;Trusted_Connection=True;TrustServerCertificate=True");
+        optionsBuilder.UseSqlServer("Server=.;Database=FilmMoi;Trusted_Connection=True;TrustServerCertificate=True");
         //optionsBuilder.UseSqlServer("Server=.;Database=FlimMoi;Trusted_Connection=True;TrustServerCertificate=True");
     }
 

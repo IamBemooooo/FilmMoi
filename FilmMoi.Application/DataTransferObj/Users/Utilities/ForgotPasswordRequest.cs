@@ -9,8 +9,5 @@ namespace FilmMoi.Application.DataTransferObj.Users.Utilities
     public class ForgotPasswordRequest
     {
         public string Email { get; set; }
-        public string EmailConfirm { get; set; }
-
-        public string NewPassword {  get; set; }
     }
 }

@@ -14,12 +14,12 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadWrite
 {
     public class UserReadWriteRepository : IReadWriteRepository<Users>
     {
-        private readonly FlimMoiContext _db;
+        private readonly FilmMoiContext _db;
         private readonly IMapper _mapper;
 
         public UserReadWriteRepository(IMapper mapper)
         {
-            _db = new FlimMoiContext();
+            _db = new FilmMoiContext();
             _mapper = mapper;
         }
 

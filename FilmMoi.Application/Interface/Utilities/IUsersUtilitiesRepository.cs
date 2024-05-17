@@ -18,7 +18,7 @@ namespace FilmMoi.Application.Interface.Utilities
         //Ban Acc
         Task<bool> BanAcc(Guid id,CancellationToken cancellationToken);
         Task<bool> LogOut(CancellationToken cancellationToken);
-        bool SeedGmail(string email);
+        Task<bool> SeedGmail(string email);
 
     }
 }

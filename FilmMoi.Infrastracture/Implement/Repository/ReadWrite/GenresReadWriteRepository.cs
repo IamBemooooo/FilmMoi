@@ -15,9 +15,9 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadWrite
 {
     public class GenresReadWriteRepository : IReadWriteRepository<Genres>
     {
-        private FlimMoiContext _context;
+        private FilmMoiContext _context;
         public IMapper _mapper;
-        public GenresReadWriteRepository(FlimMoiContext context, IMapper mapper)
+        public GenresReadWriteRepository(FilmMoiContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
