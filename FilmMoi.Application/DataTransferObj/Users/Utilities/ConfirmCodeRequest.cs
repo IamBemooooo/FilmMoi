@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace FilmMoi.Application.DataTransferObj.Users.Utilities
 {
-    public class ForgotPasswordRequest
+    public class ConfirmCodeRequest
     {
-        public Guid Id { get; set; }
-        public string NewPassword { get; set; }
-        public string ConfirmPW { get; set; }
+        public Guid ID { get; set; }
+        public string? Code { get; set; }
     }
 }

@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace FilmMoi.Application.DataTransferObj.Users.Utilities
 {
-    public class ForgotPasswordRequest
+    public class SeedMailRequest
     {
-        public Guid Id { get; set; }
-        public string NewPassword { get; set; }
-        public string ConfirmPW { get; set; }
+        public bool type {  get; set; } // true is activating account,false is send code
+        public string email {get; set;}
     }
 }

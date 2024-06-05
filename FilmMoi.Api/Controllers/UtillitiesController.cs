@@ -16,11 +16,46 @@ namespace FilmMoi.Api.Controllers
             _repo = repo;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody]ForgotPasswordRequest request,CancellationToken cancellationToken)
+        [HttpPost("seedgmail")]
+        public async Task<IActionResult> SeedMail(SeedMailRequest request)
         {
-            var result = await _repo.SeedGmail(request.Email);
-            return Ok(result);
+            try
+            {
+                var obj = await _repo.SeedGmail(request);
+                return Ok(obj);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Faild: " + $"{ex.Message}");
+            }
+        }
+
+        [HttpPut("forgotpassword")]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordRequest request, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var obj = await _repo.ForgotPassword(request, cancellationToken);
+                return Ok(obj);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Faild: " + $"{ex.Message}");
+            }
+        }
+
+        [HttpPut("changepassword")]
+        public async Task<IActionResult> ChangePassword(ChangePasswordRequest request, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var obj = await _repo.ChangePassword(request, cancellationToken);
+                return Ok(obj);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Faild: " + $"{ex.Message}");
+            }
         }
     }
 }
