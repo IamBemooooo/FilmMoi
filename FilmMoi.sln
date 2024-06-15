@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmMoi.Domain", "FilmMoi.Domain\FilmMoi.Domain.csproj", "{5EB17116-4185-4F52-90F7-672D485B3185}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmMoi.Domain", "FilmMoi.Domain\FilmMoi.Domain.csproj", "{5EB17116-4185-4F52-90F7-672D485B3185}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmMoi.Application", "FilmMoi.Application\FilmMoi.Application.csproj", "{1F0B85B3-E87F-4EC1-9248-CA0EB75B8FEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmMoi.Application", "FilmMoi.Application\FilmMoi.Application.csproj", "{1F0B85B3-E87F-4EC1-9248-CA0EB75B8FEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmMoi.Infrastracture", "FilmMoi.Infrastracture\FilmMoi.Infrastracture.csproj", "{E56BEAE3-8F8B-40B2-ACC8-F809DC4A5C81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmMoi.Infrastracture", "FilmMoi.Infrastracture\FilmMoi.Infrastracture.csproj", "{E56BEAE3-8F8B-40B2-ACC8-F809DC4A5C81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmMoi.Api", "FilmMoi.Api\FilmMoi.Api.csproj", "{1316F250-896B-4C41-9A55-C6C3680FA75A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmMoi.Api", "FilmMoi.Api\FilmMoi.Api.csproj", "{1316F250-896B-4C41-9A55-C6C3680FA75A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Server", "1.Server", "{BD668F27-E81F-41C5-A2CB-7D1D0628408E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Web", "2.Web", "{5C28F56E-3FA5-488A-AAFC-EBF552B5329D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmMoi.Client", "FilmMoi.Client\FilmMoi.Client.csproj", "{BBAB5410-CE22-4BF4-9022-0BAFED4E5F36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{CE70EAF3-E78C-4FF0-BDFE-0E964DBEA23D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +39,10 @@ Global
 		{1316F250-896B-4C41-9A55-C6C3680FA75A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1316F250-896B-4C41-9A55-C6C3680FA75A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1316F250-896B-4C41-9A55-C6C3680FA75A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BBAB5410-CE22-4BF4-9022-0BAFED4E5F36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BBAB5410-CE22-4BF4-9022-0BAFED4E5F36}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BBAB5410-CE22-4BF4-9022-0BAFED4E5F36}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BBAB5410-CE22-4BF4-9022-0BAFED4E5F36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE70EAF3-E78C-4FF0-BDFE-0E964DBEA23D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE70EAF3-E78C-4FF0-BDFE-0E964DBEA23D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE70EAF3-E78C-4FF0-BDFE-0E964DBEA23D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE70EAF3-E78C-4FF0-BDFE-0E964DBEA23D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,7 +52,7 @@ Global
 		{1F0B85B3-E87F-4EC1-9248-CA0EB75B8FEA} = {BD668F27-E81F-41C5-A2CB-7D1D0628408E}
 		{E56BEAE3-8F8B-40B2-ACC8-F809DC4A5C81} = {BD668F27-E81F-41C5-A2CB-7D1D0628408E}
 		{1316F250-896B-4C41-9A55-C6C3680FA75A} = {BD668F27-E81F-41C5-A2CB-7D1D0628408E}
-		{BBAB5410-CE22-4BF4-9022-0BAFED4E5F36} = {5C28F56E-3FA5-488A-AAFC-EBF552B5329D}
+		{CE70EAF3-E78C-4FF0-BDFE-0E964DBEA23D} = {5C28F56E-3FA5-488A-AAFC-EBF552B5329D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E0814CC1-A8F6-41E8-AD12-90D072B99533}
