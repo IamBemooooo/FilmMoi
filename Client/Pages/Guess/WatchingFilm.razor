@@ -1,0 +1,131 @@
+﻿@page "/WatchingFilm"
+
+@layout MainLayout
+
+<MudElement class="container-fluid d-flex justify-content-center" style="background-image:url(./images/top-rated-bg.jpg)">
+    <div class="container justify-content-center pt-5" style="background-color:#1a1a1a;min-height:200px">
+        <video class="container p-0 mt-5" id="videoPlayer" webkit-allowfullscreen controls autoplay muted>
+            <source src="https://youtu.be/h6RONxjPBf4?si=cwisLZ48yOaUQLuA" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</MudElement>
+
+<MudElement class="container-fluid d-flex justify-content-center" style="background-image:url(./images/top-rated-bg.jpg)">
+    <MudElement class="container justify-content-center pt-5 pb-5" style="background-color:#1a1a1a">
+        <div class="container justify-content-center rounded-2 pb-5" style="background-color:#333;min-height:140px"> 
+            <MudElement class="container justify-content-start rounded-2 pb-5 fs-5 text-light" style="min-height:60px"> 
+                <i style="color:hsl(57, 97%, 45%);" class="fa-solid fa-database me-1 pt-5"></i>List of Episodes
+            </MudElement> 
+            <MudList class="container d-flex justify-content-center flex-wrap rounded-2 pb-5" style="min-height:60px">
+                <MudListItem Class="btn btn-outline-secondary fs-5 m-3 text-light" Style="width:auto">Episode 1</MudListItem> 
+                <MudListItem Class="btn btn-outline-secondary fs-5 m-3 text-light" Style="width:auto">Episode 2</MudListItem>
+                <MudListItem Class="btn btn-outline-secondary fs-5 m-3 text-light" Style="width:auto">Episode 3</MudListItem>
+                <MudListItem Class="btn btn-outline-secondary fs-5 m-3 text-light" Style="width:auto">Episode 4</MudListItem>
+                <MudListItem Class="btn btn-outline-secondary fs-5 m-3 text-light" Style="width:auto">Episode 5</MudListItem>
+                <MudListItem Class="btn btn-outline-secondary fs-5 m-3 text-light" Style="width:auto">Episode 6</MudListItem>
+                <MudListItem Class="btn btn-outline-secondary fs-5 m-3 text-light" Style="width:auto">Episode 7</MudListItem>
+                <MudListItem Class="btn btn-outline-secondary fs-5 m-3 text-light" Style="width:auto">Episode 8</MudListItem>
+                <MudListItem Class="btn btn-outline-secondary fs-5 m-3 text-light" Style="width:auto">Episode 9</MudListItem>
+                <MudListItem Class="btn btn-outline-secondary fs-5 m-3 text-light" Style="width:auto">Episode 10</MudListItem>
+            </MudList> 
+            <MudDivider Style="height:2px"></MudDivider>
+        </div>
+    </MudElement>
+</MudElement> 
+
+<MudElement class="container-fluid d-flex justify-content-center" style="background-image:url(./images/top-rated-bg.jpg)">
+    <MudElement class="container justify-content-center pt-5 pb-5" style="background-color:#1a1a1a">
+        <div class="container justify-content-center rounded-2 pb-5 bg-white" style="min-height:140px">
+            <MudContainer class="container-fluid justify-content-start rounded-2 pb-5 fs-5 text-dark pt-3" style="min-height:60px">
+                <i class="fa-solid fa-pen me-1 text-dark pt-5"></i>Comments
+            </MudContainer>
+            <MudDivider Style="height:2px"></MudDivider>
+            <MudList class="container d-flex justify-content-start flex-wrap rounded-2 pb-5" style="min-height:60px">
+                <MudListItem Class="" Style="">
+                    <MudContainer Class="container d-flex m-0 p-0">
+                        <MudAvatar Class="me-2" Color="Color.Primary">N</MudAvatar>
+                        <input T="string" Class="pt-0 ps-3 border " Placeholder="  Make Comments..." Style="min-height:70px;width:100%"/>
+                    </MudContainer>
+                </MudListItem>
+                <MudListItem Class="" Style="">
+                    <MudContainer Class="container d-flex align-items-center m-0 p-0"><MudAvatar Class="me-2" Color="Color.Primary">M</MudAvatar><p class="fs-5 mb-0">Đại Ái Tiên Tôn</p></MudContainer>
+                    <MudText Class="text-dark" Style="padding-left:48px">
+                        Mình vừa bị đuổi ra khỏi chỗ thuê trọ mn ạ, nơi mà mình gắn bó suốt gần 10 năm và lý do là mình không thể đóng nổi 2 tháng tiền trọ. Một chuyện mà trong mơ mình cũng chưa bao giờ nghĩ đến nó lại xảy ra với chính bản thân mình.
+                        Mình 28 tuổi, ở cái tuổi đáng ra phải vững vàng về tài chính
+                    </MudText>
+                </MudListItem>
+            </MudList>
+            <MudDivider Style="height:2px"></MudDivider>
+            <MudContainer class="container-fluid d-flex justify-content-center rounded-2 pb-5 fs-5 text-dark pt-3" style="min-height:60px">
+                <MudPagination Color="Color.Surface" Count="4"/>
+            </MudContainer>
+        </div>
+    </MudElement>
+</MudElement> 
+
+<div class="container-fluid justify-content-center" style="background-image:url(./images/upcoming-bg.png);min-height:860px">
+    <div Class="container ps-0 pe-0" Style="background-color:#1a1a1a;height:50px"></div>
+    <div class="container ps-0 pe-0 pt-3" style="background-color:#1a1a1a;">
+        <MudElement class="container d-flex justify-content-center">
+            <div class="fs-6 m-0 p-0" style="color:hsl(57, 97%, 45%);">ONLINE STREAMING</div>
+        </MudElement>
+        <MudElement class="container d-flex justify-content-center" style="padding-bottom:30px">
+            <MudElement class="container-fluid d-flex justify-content-center d-flex m-0 p-0">
+                <div style="font-size:40px;" class="m-0 p-0 mt-4 text-light fw-bold">
+                    RELATED MOVIES
+                </div>
+            </MudElement>
+        </MudElement>
+    </div>
+    <MudElement class="container d-flex justify-content-between flex-wrap" style="background-color:#1a1a1a">
+
+        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
+            <MudCardMedia Height="400" Image="./images/movie-1.png"></MudCardMedia>
+            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                <MudText Class="ms-0 me-0">Story of the day</MudText>
+                <MudText Class="ms-0 me-0" Typo="Typo.body2">2022</MudText>
+            </MudCardContent>
+            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="2" />
+                <MudText Class="ms-0 me-0" Typo="Typo.body2">128Min</MudText>
+            </MudCardContent>
+        </MudCard>
+        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
+            <MudCardMedia Height="400" Image="./images/movie-2.png"></MudCardMedia>
+            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                <MudText Class="ms-0 me-0">Story of the day</MudText>
+                <MudText Class="ms-0 me-0" Typo="Typo.body2">2022</MudText>
+            </MudCardContent>
+            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="2" />
+                <MudText Class="ms-0 me-0" Typo="Typo.body2">128Min</MudText>
+            </MudCardContent>
+        </MudCard>
+        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
+            <MudCardMedia Height="400" Image="./images/movie-3.png"></MudCardMedia>
+            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                <MudText Class="ms-0 me-0">Story of the day</MudText>
+                <MudText Class="ms-0 me-0" Typo="Typo.body2">2022</MudText>
+            </MudCardContent>
+            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="2" />
+                <MudText Class="ms-0 me-0" Typo="Typo.body2">128Min</MudText>
+            </MudCardContent>
+        </MudCard>
+        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
+            <MudCardMedia Height="400" Image="./images/movie-4.png"></MudCardMedia>
+            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                <MudText Class="ms-0 me-0">Story of the day</MudText>
+                <MudText Class="ms-0 me-0" Typo="Typo.body2">2022</MudText>
+            </MudCardContent>
+            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="2" />
+                <MudText Class="ms-0 me-0" Typo="Typo.body2">128Min</MudText>
+            </MudCardContent>
+        </MudCard>
+    </MudElement>
+</div>
+
+
+
