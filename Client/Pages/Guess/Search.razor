@@ -1,0 +1,78 @@
+﻿@page "/SearchFilm"
+<MudElement class="container-fluid d-flex justify-content-center" style="background-image:url(./images/top-rated-bg.jpg)">
+    <div class="container d-flex text-light justify-content-between pt-5" style="background-color:#1a1a1a;min-height:50px">
+        <div class="input-group" style="width:57%">
+            <span class="input-group-text" id="basic-addon1">Search</span>
+            <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+        </div>
+        <select style="width:20%" class="form-select" aria-label="Default select example">
+            <option selected>Genre</option>
+            <option value="1">Drama</option>
+            <option value="2">Action</option>
+            <option value="3">Horror</option>
+        </select>
+        <select style="width:10%" class="form-select " aria-label="Default select example">
+            <option selected>Year</option>
+            <option value="1">2024</option>
+            <option value="2">2023</option>
+            <option value="3">2022</option>
+        </select>
+        <select style="width:10%" class="form-select" aria-label="Default select example">
+            <option selected>Rating</option>
+            <option value="1">5</option>
+            <option value="2">4</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+</MudElement>
+
+<div class="container-fluid justify-content-center" style="background-image:url(./images/upcoming-bg.png);min-height:870px;padding-bottom:100px">
+    <div class="container d-flex justify-content-between flex-wrap" style="padding-top:50px;background-color:#1a1a1a;">
+
+        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
+            <MudCardMedia Height="400" Image="./images/movie-1.png"></MudCardMedia>
+            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                <MudText Class="ms-0 me-0">Story of the day</MudText>
+                <MudText Class="ms-0 me-0" Typo="Typo.body2">2022</MudText>
+            </MudCardContent>
+            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="2" />
+                <MudText Class="ms-0 me-0" Typo="Typo.body2">128Min</MudText>
+            </MudCardContent>
+        </MudCard>
+        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
+            <MudCardMedia Height="400" Image="./images/movie-2.png"></MudCardMedia>
+            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                <MudText Class="ms-0 me-0">Story of the day</MudText>
+                <MudText Class="ms-0 me-0" Typo="Typo.body2">2022</MudText>
+            </MudCardContent>
+            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="2" />
+                <MudText Class="ms-0 me-0" Typo="Typo.body2">128Min</MudText>
+            </MudCardContent>
+        </MudCard>
+        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
+            <MudCardMedia Height="400" Image="./images/movie-3.png"></MudCardMedia>
+            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                <MudText Class="ms-0 me-0">Story of the day</MudText>
+                <MudText Class="ms-0 me-0" Typo="Typo.body2">2022</MudText>
+            </MudCardContent>
+            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="2" />
+                <MudText Class="ms-0 me-0" Typo="Typo.body2">128Min</MudText>
+            </MudCardContent>
+        </MudCard>
+        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
+            <MudCardMedia Height="400" Image="./images/movie-4.png"></MudCardMedia>
+            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                <MudText Class="ms-0 me-0">Story of the day</MudText>
+                <MudText Class="ms-0 me-0" Typo="Typo.body2">2022</MudText>
+            </MudCardContent>
+            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="2" />
+                <MudText Class="ms-0 me-0" Typo="Typo.body2">128Min</MudText>
+            </MudCardContent>
+        </MudCard>
+
+    </div>
+</div>
