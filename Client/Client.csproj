@@ -10,4 +10,8 @@
     <PackageReference Include="MudBlazor" Version="6.20.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\avartar\" />
+  </ItemGroup>
+
 </Project>
