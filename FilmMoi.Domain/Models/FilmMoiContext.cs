@@ -23,8 +23,8 @@ public partial class FilmMoiContext : DbContext
 	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 	{
 
-		optionsBuilder.UseSqlServer("Server=SURINRIN\\SQLEXPRESS01;Database=FilmMoi;Trusted_Connection=True;TrustServerCertificate=True");
-		//optionsBuilder.UseSqlServer("Server=.;Database=FlimMoi;Trusted_Connection=True;TrustServerCertificate=True");
+		//optionsBuilder.UseSqlServer("Server=SURINRIN\\SQLEXPRESS01;Database=FilmMoi;Trusted_Connection=True;TrustServerCertificate=True");
+		optionsBuilder.UseSqlServer("Server=.;Database=FilmMoi;Trusted_Connection=True;TrustServerCertificate=True");
 	}
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
