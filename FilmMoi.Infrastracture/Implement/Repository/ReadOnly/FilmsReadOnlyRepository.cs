@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using FilmMoi.Application.DataTransferObj.Films;
+using FilmMoi.Application.DataTransferObj.Ratings;
 using FilmMoi.Application.Interface.ReadOnly;
 using FilmMoi.Application.ValueObj.Extentions;
 using FilmMoi.Application.ValueObj.Pagination;
@@ -14,21 +15,26 @@ namespace FilmMoi.Infrastructure.Implement.Repository.ReadOnly
     {
         private readonly FilmMoiContext _db;
         private readonly IMapper _map;
-
-        public FilmsReadOnlyRepository(IMapper map)
+        private readonly IReadOnlyNPRepository<RatingDto> _rating;
+		public FilmsReadOnlyRepository(IMapper map, IReadOnlyNPRepository<RatingDto> rating)
         {
             _db = new FilmMoiContext();
             _map = map;
+            _rating = rating;
         }
 
         public async Task<PaginationResponse<FilmDto>> GetAll(FilmsWithPaginationRequest obj, CancellationToken cancellationToken)
         {
-            var query = _db.Films.AsNoTracking();
+            var query = _db.Films.Include(x => x.GenreFilms).Include(x=>x.Ratings).AsNoTracking();
             if (!string.IsNullOrWhiteSpace(obj.Name))
             {
                query = query.Where(x => x.Name.Contains(obj.Name));
             }
-            query.OrderBy(x => x.Status);
+            if (obj.Rating != 0)
+            {
+				query = query.Where(x => x.Ratings.Count == obj.Rating);
+			}
+            
             var result = await query.PaginateAsync<Films, FilmDto>(obj, _map, cancellationToken);
 
             return new PaginationResponse<FilmDto>()
