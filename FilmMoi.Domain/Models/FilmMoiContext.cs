@@ -4,11 +4,12 @@ using System.Globalization;
 using System.Reflection;
 using FilmMoi.Domain.Models.Entities;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace FilmMoi.Domain.Models;
 
-public partial class FilmMoiContext : DbContext
+public class FilmMoiContext : IdentityDbContext<Users,Roles,Guid>
 {
 	public FilmMoiContext()
 	{
@@ -23,13 +24,31 @@ public partial class FilmMoiContext : DbContext
 	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 	{
 
-		//optionsBuilder.UseSqlServer("Server=SURINRIN\\SQLEXPRESS01;Database=FilmMoi;Trusted_Connection=True;TrustServerCertificate=True");
-		optionsBuilder.UseSqlServer("Server=.;Database=FilmMoi;Trusted_Connection=True;TrustServerCertificate=True");
+		optionsBuilder.UseSqlServer("Server=SURINRIN\\SQLEXPRESS01;Database=FilmMoi;Trusted_Connection=True;TrustServerCertificate=True");
+		//optionsBuilder.UseSqlServer("Server=.;Database=FilmMoi;Trusted_Connection=True;TrustServerCertificate=True");
 	}
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
 		modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+		modelBuilder.Entity<IdentityUserLogin<Guid>>(b =>
+	{
+		b.HasKey(x => new { x.LoginProvider, x.ProviderKey });
+	}); modelBuilder.Entity<IdentityUserRole<Guid>>(b =>
+	{
+		b.HasKey(x => new { x.RoleId, x.UserId });
+	});modelBuilder.Entity<IdentityUserToken<Guid>>(b =>
+	{
+		b.HasKey(x => new { x.LoginProvider, x.UserId });
+	});
+		foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+		{
+			var tableName = entityType.GetTableName();
+			if (tableName.StartsWith("AspNet"))
+			{
+				entityType.SetTableName(tableName.Substring(6));
+			}
+		}
 		SeedingData(modelBuilder);
 	}
 
