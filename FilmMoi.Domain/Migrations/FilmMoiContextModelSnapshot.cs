@@ -4,7 +4,6 @@ using FilmMoi.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -12,11 +11,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FilmMoi.Domain.Migrations
 {
     [DbContext(typeof(FilmMoiContext))]
-    [Migration("20240516064107_hhh")]
-    partial class hhh
+    partial class FilmMoiContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,7 +72,7 @@ namespace FilmMoi.Domain.Migrations
                         new
                         {
                             ID = new Guid("7677bb7f-f9aa-4738-a61d-b52427d9dd62"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 13, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2722), new TimeSpan(0, 7, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 9, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3316), new TimeSpan(0, 7, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Dob = new DateTime(1997, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -87,7 +84,7 @@ namespace FilmMoi.Domain.Migrations
                         new
                         {
                             ID = new Guid("794b3996-aac6-437e-87c6-197fde46149d"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 13, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2763), new TimeSpan(0, 7, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 9, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3361), new TimeSpan(0, 7, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Dob = new DateTime(1998, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -99,7 +96,7 @@ namespace FilmMoi.Domain.Migrations
                         new
                         {
                             ID = new Guid("e7ec9630-52da-4e31-9700-afe4627d672a"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 13, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2766), new TimeSpan(0, 7, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 9, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3364), new TimeSpan(0, 7, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Dob = new DateTime(1990, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -110,8 +107,8 @@ namespace FilmMoi.Domain.Migrations
                         },
                         new
                         {
-                            ID = new Guid("6d2b7703-081a-4355-a1ef-5adf9c2ba9ce"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 13, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2785), new TimeSpan(0, 7, 0, 0, 0)),
+                            ID = new Guid("499b6c60-3a50-40c3-a33a-e8e4022a1eef"),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 9, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3367), new TimeSpan(0, 7, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Dob = new DateTime(1979, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -122,8 +119,8 @@ namespace FilmMoi.Domain.Migrations
                         },
                         new
                         {
-                            ID = new Guid("8a1b29ec-b125-4d26-a4ad-d710ff3122f5"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 13, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2788), new TimeSpan(0, 7, 0, 0, 0)),
+                            ID = new Guid("6b2e7a56-27ff-4b2c-b2ad-98814457e6ee"),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 9, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3370), new TimeSpan(0, 7, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Dob = new DateTime(1984, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -245,16 +242,16 @@ namespace FilmMoi.Domain.Migrations
                     b.HasData(
                         new
                         {
-                            ID = new Guid("452a20da-ceb1-4bc6-a7d4-cfaa3ce32386"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2918), new TimeSpan(0, 0, 0, 0, 0)),
+                            ID = new Guid("0c257c82-831d-431e-892e-8e90dc2121aa"),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3910), new TimeSpan(0, 0, 0, 0, 0)),
                             ID_ACtor = new Guid("7677bb7f-f9aa-4738-a61d-b52427d9dd62"),
                             ID_Film = new Guid("98236a61-4d91-42fe-b956-fd64fb14ddc5"),
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
-                            ID = new Guid("d04d492e-d1ad-42d0-83fa-45a62d562909"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2922), new TimeSpan(0, 0, 0, 0, 0)),
+                            ID = new Guid("9ffccfe3-b88d-421e-99a0-5069a2ab1454"),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3915), new TimeSpan(0, 0, 0, 0, 0)),
                             ID_ACtor = new Guid("794b3996-aac6-437e-87c6-197fde46149d"),
                             ID_Film = new Guid("98236a61-4d91-42fe-b956-fd64fb14ddc5"),
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0))
@@ -325,12 +322,12 @@ namespace FilmMoi.Domain.Migrations
                         {
                             ID = new Guid("98236a61-4d91-42fe-b956-fd64fb14ddc5"),
                             AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2820), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3409), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Anime cute",
                             Director = "Reki Kawahara",
-                            Image = "film1.jpg",
+                            Image = "series-1.png",
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Name = "Sword Art Online",
                             Status = 1,
@@ -341,12 +338,12 @@ namespace FilmMoi.Domain.Migrations
                         {
                             ID = new Guid("d8a2e1e2-5d8c-4c4c-bf5f-9a7d32de0a2a"),
                             AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2832), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3424), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Movie cute",
                             Director = "Frank Darabont",
-                            Image = "film2.jpg",
+                            Image = "series-2.png",
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Name = "The Shawshank Redemption",
                             Status = 1,
@@ -357,12 +354,12 @@ namespace FilmMoi.Domain.Migrations
                         {
                             ID = new Guid("f5f7a014-9d4e-4c2e-a0b6-9b063f2e8f55"),
                             AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2836), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3428), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Movie cute",
                             Director = "Christopher Nolan",
-                            Image = "film3.jpg",
+                            Image = "series-3.png",
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Name = "Inception",
                             Status = 1,
@@ -373,12 +370,12 @@ namespace FilmMoi.Domain.Migrations
                         {
                             ID = new Guid("7b6c8b8f-70da-4e89-9971-2f1a8e7f9b56"),
                             AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2839), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3433), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Movie cute",
                             Director = "Quentin Tarantino",
-                            Image = "film4.jpg",
+                            Image = "series-4.png",
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Name = "Pulp Fiction",
                             Status = 1,
@@ -389,14 +386,494 @@ namespace FilmMoi.Domain.Migrations
                         {
                             ID = new Guid("3d9a9d16-1b45-4a9b-8f7e-e3f0e0d8e3b9"),
                             AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2843), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3437), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Movie cute",
                             Director = "Christopher Nolan",
-                            Image = "film5.jpg",
+                            Image = "movie-1.png",
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Name = "The Dark Knight",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("0c85a87c-477e-450d-9e1e-b9bf0aa05135"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3473), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director0",
+                            Image = "movie-6.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film0",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("72db7e1e-3c9b-4f0f-932b-dc1dbbb2b635"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3576), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director1",
+                            Image = "movie-6.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film1",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("d3d734e4-68f4-40c0-98d2-341a2eff9319"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3583), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director2",
+                            Image = "movie-4.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film2",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("4a75beee-5a3b-47e9-9b62-38a97b4e4605"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3594), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director3",
+                            Image = "movie-6.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film3",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("c09ad538-55d2-4b71-9cfa-199e4478d564"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3603), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director4",
+                            Image = "movie-5.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film4",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("c7bc5400-9477-4509-b545-c9db4419163f"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3609), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director5",
+                            Image = "movie-4.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film5",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("afe6b966-11f3-447c-9cda-e476b5349790"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3617), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director6",
+                            Image = "movie-2.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film6",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("2792b5f7-9cd8-48cb-b6bd-677c169f9f79"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3622), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director7",
+                            Image = "movie-6.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film7",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("7b5650c7-484e-4d18-b5ca-46648ce30eed"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3627), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director8",
+                            Image = "movie-4.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film8",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("95f17636-2156-4962-86cb-cb58153191e2"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3635), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director9",
+                            Image = "movie-1.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film9",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("3f4ccf01-5f75-4198-a5b1-2ec3cdda2399"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3640), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director10",
+                            Image = "movie-5.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film10",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("fb6ce8a4-9042-4a7d-bc61-7acc484120bf"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3646), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director11",
+                            Image = "movie-1.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film11",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("085fc35f-e453-4ba0-8b0e-e85f96d7e91c"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3653), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director12",
+                            Image = "movie-4.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film12",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("90f2997f-668a-486c-994a-926df3ad1459"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3657), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director13",
+                            Image = "movie-4.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film13",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("e6f3786e-cf89-49a4-b3ad-49c002f312d3"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3664), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director14",
+                            Image = "movie-5.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film14",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("bf101e80-82ad-42a1-8de3-184839701042"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3668), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director15",
+                            Image = "movie-5.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film15",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("7ad492bb-44c1-4ad6-99dd-9a15718322fe"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3673), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director16",
+                            Image = "movie-6.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film16",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("8441cec9-5153-4b7e-a768-4f004d23b569"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3681), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director17",
+                            Image = "movie-7.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film17",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("a0f054ad-73a4-44d5-a31d-5cc30d9a99ba"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3686), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director18",
+                            Image = "movie-4.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film18",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("e230a376-a72e-47fc-94db-27870f3ee481"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3696), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director19",
+                            Image = "movie-2.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film19",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("030d330d-5ad2-4a28-b122-c3222383562a"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3702), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director20",
+                            Image = "movie-1.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film20",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("36874110-a8bf-4cc8-9b56-6e1c6edd0639"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3707), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director21",
+                            Image = "movie-1.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film21",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("eabda0cf-ca91-418b-8b37-2886394af522"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3713), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director22",
+                            Image = "movie-1.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film22",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("4026f57c-726c-44e7-a050-b66136027d2b"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3717), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director23",
+                            Image = "movie-2.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film23",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("d19cbe13-eedf-4f12-a3d3-e0e59515c07d"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3722), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director24",
+                            Image = "movie-1.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film24",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("bf73398f-dc47-4a67-895b-110e7115a9bf"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3729), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director25",
+                            Image = "movie-5.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film25",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("be5e1ab1-9cd3-44df-920b-f8c160edde93"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3733), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director26",
+                            Image = "movie-2.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film26",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("99215d8c-cd9d-4f0a-b039-dfed1bef0bca"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3738), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director27",
+                            Image = "movie-7.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film27",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("7349d68f-2be4-4e98-8082-52b3e28d035d"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3744), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director28",
+                            Image = "movie-7.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film28",
+                            Status = 1,
+                            TotalEpisode = 0,
+                            Year = 2024
+                        },
+                        new
+                        {
+                            ID = new Guid("bb6a2ac9-39a2-4449-a10f-2742918b78fc"),
+                            AvgDuration = new TimeSpan(0, 0, 0, 0, 0),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3749), new TimeSpan(0, 0, 0, 0, 0)),
+                            Deleted = false,
+                            DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Description = "Movie cute",
+                            Director = "Director29",
+                            Image = "movie-6.png",
+                            ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            Name = "Film29",
                             Status = 1,
                             TotalEpisode = 0,
                             Year = 2024
@@ -438,16 +915,16 @@ namespace FilmMoi.Domain.Migrations
                     b.HasData(
                         new
                         {
-                            ID = new Guid("f3a809ce-6dd0-47ca-a374-1122bedf7abd"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2941), new TimeSpan(0, 0, 0, 0, 0)),
+                            ID = new Guid("8a45c891-f4e1-4bbd-9b36-32ff4249e7f5"),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3953), new TimeSpan(0, 0, 0, 0, 0)),
                             ID_Film = new Guid("98236a61-4d91-42fe-b956-fd64fb14ddc5"),
                             ID_Genre = new Guid("cd19b97d-2377-41bb-99dc-7db8314ff35e"),
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0))
                         },
                         new
                         {
-                            ID = new Guid("a50f6fa6-1e4f-48c6-bf6d-0f6f93771cbb"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2945), new TimeSpan(0, 0, 0, 0, 0)),
+                            ID = new Guid("af257151-7ee2-4855-892a-0f9f35b2e059"),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3958), new TimeSpan(0, 0, 0, 0, 0)),
                             ID_Film = new Guid("d8a2e1e2-5d8c-4c4c-bf5f-9a7d32de0a2a"),
                             ID_Genre = new Guid("836c97c0-2ad2-4cd9-b821-537a8a872354"),
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0))
@@ -493,7 +970,7 @@ namespace FilmMoi.Domain.Migrations
                         new
                         {
                             ID = new Guid("cd19b97d-2377-41bb-99dc-7db8314ff35e"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2865), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3782), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             GenreName = "Anime",
@@ -502,7 +979,7 @@ namespace FilmMoi.Domain.Migrations
                         new
                         {
                             ID = new Guid("088f52ea-8a6d-4bb5-8bb8-2cd647e9b0f4"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2869), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3787), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             GenreName = "Chinese",
@@ -511,7 +988,7 @@ namespace FilmMoi.Domain.Migrations
                         new
                         {
                             ID = new Guid("52048ea3-02c1-4c1c-81e0-0e5de6b16b07"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2870), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3789), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             GenreName = "Korea",
@@ -520,7 +997,7 @@ namespace FilmMoi.Domain.Migrations
                         new
                         {
                             ID = new Guid("836c97c0-2ad2-4cd9-b821-537a8a872354"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2872), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3791), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             GenreName = "Romantic",
@@ -529,7 +1006,7 @@ namespace FilmMoi.Domain.Migrations
                         new
                         {
                             ID = new Guid("d5c9f4da-131e-47b6-b41f-a91409bb5d3a"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2873), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3794), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
                             DeletedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             GenreName = "Action",
@@ -571,7 +1048,7 @@ namespace FilmMoi.Domain.Migrations
                         {
                             ID_User = new Guid("f69cd789-4c44-401c-a021-5b6742af2279"),
                             ID_Film = new Guid("98236a61-4d91-42fe-b956-fd64fb14ddc5"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2898), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3876), new TimeSpan(0, 0, 0, 0, 0)),
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Rating = 5
                         },
@@ -579,7 +1056,7 @@ namespace FilmMoi.Domain.Migrations
                         {
                             ID_User = new Guid("f69cd789-4c44-401c-a021-5b6742af2279"),
                             ID_Film = new Guid("d8a2e1e2-5d8c-4c4c-bf5f-9a7d32de0a2a"),
-                            CreatedTime = new DateTimeOffset(new DateTime(2024, 5, 16, 6, 41, 7, 357, DateTimeKind.Unspecified).AddTicks(2902), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedTime = new DateTimeOffset(new DateTime(2024, 6, 28, 2, 43, 8, 352, DateTimeKind.Unspecified).AddTicks(3880), new TimeSpan(0, 0, 0, 0, 0)),
                             ModifiedTime = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Rating = 5
                         });
@@ -793,6 +1270,102 @@ namespace FilmMoi.Domain.Migrations
                     b.HasIndex("ID_User");
 
                     b.ToTable("WatchedFilms");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RoleClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.ToTable("UserLogins");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
+                {
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("RoleId", "UserId");
+
+                    b.ToTable("UserRoles");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("LoginProvider", "UserId");
+
+                    b.ToTable("UserTokens");
                 });
 
             modelBuilder.Entity("FilmMoi.Domain.Models.Entities.Comments", b =>
