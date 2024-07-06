@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FilmMoi.Application.DataTransferObj.Films;
+using FilmMoi.Application.DataTransferObj.Ratings;
 using FilmMoi.Application.Interface.ReadOnly;
 using FilmMoi.Application.Interface.ReadWrite;
 using FilmMoi.Domain.Models.Entities;
@@ -15,12 +16,14 @@ namespace FilmMoi.Api.Controllers
     public class FilmsController : ControllerBase
     {
         private readonly IReadWriteRepository<Films> _repoWrite;
+        private readonly IReadOnlyNPRepository<RatingDto> _rating;
         private readonly FilmsReadOnlyRepository _repoOnly;
         private readonly IMapper _map;
-        public FilmsController(IMapper map)
+        public FilmsController(IMapper map, IReadOnlyNPRepository<RatingDto> rating)
         {
+            _rating = rating;
             _repoWrite = new FilmsReadWriteRepository(map);
-            _repoOnly = new FilmsReadOnlyRepository(map);
+            _repoOnly = new FilmsReadOnlyRepository(map,_rating);
             _map = map;
         }
         [HttpGet]
