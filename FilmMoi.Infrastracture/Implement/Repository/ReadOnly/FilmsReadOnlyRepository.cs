@@ -16,7 +16,12 @@ namespace FilmMoi.Infrastructure.Implement.Repository.ReadOnly
         private readonly FilmMoiContext _db;
         private readonly IMapper _map;
         private readonly IReadOnlyNPRepository<RatingDto> _rating;
-		public FilmsReadOnlyRepository(IMapper map, IReadOnlyNPRepository<RatingDto> rating)
+
+        public FilmsReadOnlyRepository()
+        {
+            
+        }
+        public FilmsReadOnlyRepository(IMapper map, IReadOnlyNPRepository<RatingDto> rating)
         {
             _db = new FilmMoiContext();
             _map = map;
@@ -44,10 +49,6 @@ namespace FilmMoi.Infrastructure.Implement.Repository.ReadOnly
                 PageNumber = result.PageNumber,
                 Data = result.Data
             };
-                
-            
-
-
         }
 
         public async Task<FilmDto> GetById(Guid id, CancellationToken cancellationToken)

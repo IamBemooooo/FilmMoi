@@ -28,6 +28,7 @@ namespace FilmMoi.Api.Controllers
 			_signManager = signManager;
 			_configuration = configuration;
 		}
+
 		[HttpGet]
 		public IActionResult Index()
 		{
@@ -40,7 +41,8 @@ namespace FilmMoi.Api.Controllers
             
             var user = await _userManager.FindByNameAsync(username);
 			Console.WriteLine(user);
-			if (user != null && await _userManager.CheckPasswordAsync(user, Hash.DecryptPassword(password)))
+			var rs = true ? (user.PasswordHash == Hash.EncryptPassword(password)) : false;
+			if (user != null && rs)
 			{
 
 				var userClaims = await _userManager.GetClaimsAsync(user);
