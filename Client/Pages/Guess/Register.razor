@@ -1,0 +1,23 @@
+﻿@page "/Register"
+@layout MainLayout
+
+
+<MudElement class="container-fluid d-flex justify-content-center  pb-5" style="background-image:url(./images/top-rated-bg.jpg);">
+    <MudElement class="container d-flex text-light justify-content-center pt-5" style="background-color:#1a1a1a;min-height:50px;padding-top:200px;padding-bottom:200px">
+            <MudElement Class="p-3" Style="width:400px;background-color:#333">
+                <MudPaper Class="pa-4">
+                    <MudForm>
+                        <MudTextField T="string" Label="Username" Required="true" RequiredError="User name is required!" />
+
+                        <MudTextField T="string" Label="Password" HelperText="Choose a strong password"
+                                      InputType="InputType.Password"
+                                     Required="true"
+                                      RequiredError="Password is required!" />
+                    </MudForm>
+                </MudPaper>
+                <MudPaper Class="pa-4 mt-4">
+                    <MudButton Variant="Variant.Filled" DisableElevation="true">Reset Validation</MudButton>
+                </MudPaper>
+            </MudElement>
+        </MudElement>
+</MudElement>
