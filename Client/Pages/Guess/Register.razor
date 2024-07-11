@@ -1,23 +1,77 @@
 ﻿@page "/Register"
-@layout MainLayout
+@layout NoneLayout
 
+<h1 style="text-align: center;font-weight: bold">Register</h1>  
+<EditForm Model="@model" OnValidSubmit="HandleAsync" >
+    <DataAnnotationsValidator/>
+    <MudGrid >
+        <MudItem Class="w-100 h-100">
+            <MudCard Class="p-2" Style="background: none;color:white">
+                <MudCardContent>
+                    <MudTextField Style="color:white"
+                                  @bind-Value="model.Username" Placeholder="User Name" />
+                    <MudTextField Class="mt-3"
+                                  @bind-Value="model.Email" InputType="InputType.Email" Placeholder="Email" Style="color:white" />
+                    <MudTextField Class="mt-3" 
+                                  @bind-Value="model.Password" InputType="InputType.Password" Placeholder="Password" Style="color:white" />
+                    <MudTextField Class="mt-3"
+                                  @bind-Value="model.ConfirmPassword" InputType="InputType.Password" Placeholder="Confirm Password" Style="color:white" />
+                </MudCardContent>  
+                <div style="display:flex;justify-content: space-between">
+                    <div>
+                       <MudCheckBox @bind-Value="Basic_CheckBox2" Color="Color.Primary">Remember me</MudCheckBox>
+                    </div>
+                </div>
+                <MudCardActions Class="d-flex justify-content-center align-items-center mt-2">
+                    <MudButton Disabled="@_processing" OnClick="ProcessSomething" Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large">
+                        @if (_processing)
+                        {
+                            <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                            <MudText Class="ms-2">Processing</MudText>
+                        }
+                        else
+                        {
+                            <MudText>Register</MudText>
+                        }
+                    </MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</EditForm>
+<div class="d-flex justify-content-center align-items-center mt-2">
+    <p>
+        If you already have an account <MudLink Href="https://localhost:7272/login" Underline="Underline.Always">Login</MudLink>
+    </p>
+</div>
+<div class="d-flex justify-content-center align-items-center">
+    <ion-icon style="width: 50px; height: 50px;margin-top: 20px;"
+              name="arrow-back-circle-outline"></ion-icon>
+</div>
 
-<MudElement class="container-fluid d-flex justify-content-center  pb-5" style="background-image:url(./images/top-rated-bg.jpg);">
-    <MudElement class="container d-flex text-light justify-content-center pt-5" style="background-color:#1a1a1a;min-height:50px;padding-top:200px;padding-bottom:200px">
-            <MudElement Class="p-3" Style="width:400px;background-color:#333">
-                <MudPaper Class="pa-4">
-                    <MudForm>
-                        <MudTextField T="string" Label="Username" Required="true" RequiredError="User name is required!" />
+@code {
+    public bool Basic_CheckBox2 { get; set; } = true;
+    private class RegisterModel
+    {	
+        public string? Username { get; set; }
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+        public string? ConfirmPassword { get; set; }
+    }
+    private bool _processing = false;
 
-                        <MudTextField T="string" Label="Password" HelperText="Choose a strong password"
-                                      InputType="InputType.Password"
-                                     Required="true"
-                                      RequiredError="Password is required!" />
-                    </MudForm>
-                </MudPaper>
-                <MudPaper Class="pa-4 mt-4">
-                    <MudButton Variant="Variant.Filled" DisableElevation="true">Reset Validation</MudButton>
-                </MudPaper>
-            </MudElement>
-        </MudElement>
-</MudElement>
+    async Task ProcessSomething()
+    {
+        _processing = true;
+        await Task.Delay(2000);
+        _processing = false;
+    }
+    
+    private RegisterModel model = new RegisterModel();
+    
+    private async Task HandleAsync(EditContext editContext)
+    {
+        Console.WriteLine("OnValidSubmit");
+        await Task.CompletedTask;
+    }
+}
