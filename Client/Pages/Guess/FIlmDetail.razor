@@ -1,74 +1,93 @@
-﻿@page "/FilmDetail"
+﻿@page "/FilmDetail/{id:guid}"
+@using Client.Data.IServices.IReadOnlyService
+@using Client.DataTransferObj.Films
+@using Client.ValueObj.Pagination
 @layout MainLayout 
+@inject IReadOnlyWPService<FilmDto,FilmsWithPaginationRequest> _Ser
+@inject NavigationManager naviga
 
 <div class="container-fluid  justify-content-center" style="background-image:url(./images/top-rated-bg.jpg);min-height:670px;padding-bottom:100px">
     <div style="padding-top:100px;min-height:501.67px" class="container d-flex justify-content-between flex-wrap ps-0 pe-0">
-        <div Style="min-width:335.44px;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn p-0 m-0" data-mdb-ripple-color="light">
-            <MudCardMedia Height="510" Image="./images/movie-1.png"></MudCardMedia>
-        </div>
-        <div Style="min-width:60%;max-width:100%;background-color: rgba(0, 0, 0, 0)" Class=" p-0" >
-            @* <MudCardMedia Height="400" Image="./images/movie-2.png"></MudCardMedia>  *@
-            <div class="container d-flex" style="min-height:510px">
-                <div class="container justify-content-start">
-                    <div class="container d-flex align-items-center p-0 m-0" style="min-height:160px">
-                        <p class="text-light fw-bold text-start" style="font-size:35px;width:100%">Unlimited Movie, TVs Shows, & More.</p>
-                    </div>
-                    <ul>
-                        <li class="text-light fs-5 mb-3 text-start">
-                            <p>
-                                <b>
-                                    Episodes :
-                                </b>
-                                1
-                            </p>
-                        </li>
-                        <li class="text-light fs-5 mb-3 text-start">
-                            <p>
-                                <b>
-                                    Lastest :
-                                </b>
-                                1
-                            </p>
-                        </li>
-                        <li class="text-light fs-5 mb-3 text-start">
-                            <p>
-                                <b>
-                                    Director :
-                                </b>
-                                Bo The Dep Zai
-                            </p>
-                        </li>
-                        <li class="text-light fs-5 mb-3 text-start">
-                            <p>
-                                <b>
-                                    Actors :
-                                </b>
-                                Bo The Dep Zai, Bo The Sieu Dep Zai
-                            </p>
-                        </li>
-                        <li class="text-light fs-5 mb-3 text-start">
-                            <p>
-                                <b>
-                                    Year :
-                                </b>
-                                2024
-                            </p>
-                        </li>
-                        <li class="text-light fs-5 mb-3 text-start">
-                            <p>
-                                <b>
-                                    Duration :
-                                </b>
-                                128Min
-                            </p>
-                        </li>
-                    </ul>
-                    <div class="container-fluid d-flex p-0 m-0 justify-content-start">
-                        <MudButton Variant="Variant.Outlined" Class="fs-6 fw-bold text-light border-3 rounded-pill mt-4" Style="border-color:hsl(57, 97%, 45%);min-width:16%;height:50px;"><MudIcon Icon="@Icons.Material.Filled.PlayArrow" Class="me-2"></MudIcon> WATCH NOW</MudButton>
+        @if (FilmDetail != null)
+        {
+            string img = FilmDetail.Image;
+            <div Style="min-width:335.44px;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn p-0 m-0" data-mdb-ripple-color="light">
+                <img Height="510" src="./images/@img" />
+            </div>
+            <div Style="min-width:60%;max-width:100%;background-color: rgba(0, 0, 0, 0)" Class=" p-0">
+                <div class="container d-flex" style="min-height:510px">
+                    <div class="container justify-content-start">
+                        <div class="container d-flex align-items-center p-0 m-0" style="min-height:160px">
+                            <p class="text-light fw-bold text-start" style="font-size:35px;width:100%">@FilmDetail.Name</p>
+                        </div>
+                        <ul>
+                            <li class="text-light fs-5 mb-3 text-start">
+                                <p>
+                                    <b>
+                                        Episodes :
+                                    </b>
+                                    @FilmDetail.TotalEpisode
+                                </p>
+                            </li>
+                            <li class="text-light fs-5 mb-3 text-start">
+                                <p>
+                                    <b>
+                                        Lastest :
+                                    </b>
+                                    1
+                                </p>
+                            </li>
+                            <li class="text-light fs-5 mb-3 text-start">
+                                <p>
+                                    <b>
+                                        Director :
+                                    </b>
+                                    Bo The Dep Zai
+                                </p>
+                            </li>
+                            <li class="text-light fs-5 mb-3 text-start">
+                                <p>
+                                    <b>
+                                        Actors :
+                                    </b>
+                                    Bo The Dep Zai, Bo The Sieu Dep Zai
+                                </p>
+                            </li>
+                            <li class="text-light fs-5 mb-3 text-start">
+                                <p>
+                                    <b>
+                                        Year :
+                                    </b>
+                                    @FilmDetail.Year
+                                </p>
+                            </li>
+                            <li class="text-light fs-5 mb-3 text-start">
+                                <p>
+                                    <b>
+                                        Duration : 
+                                    </b>
+                                    @if (FilmDetail.AvgDuration != TimeSpan.Zero)
+                                    {
+                                        @FilmDetail.AvgDuration
+                                    }
+                                    else
+                                    {
+                                        
+                                    }
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="container-fluid d-flex p-0 m-0 justify-content-start">
+                            <MudButton OnClick="()=>Watch(FilmDetail.ID)" Variant="Variant.Outlined" Class="fs-6 fw-bold text-light border-3 rounded-pill mt-4" Style="border-color:hsl(57, 97%, 45%);min-width:16%;height:50px;"><MudIcon Icon="@Icons.Material.Filled.PlayArrow" Class="me-2"></MudIcon> WATCH NOW</MudButton>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        }
+        else
+        {
+            <MudProgressCircular Color="Color.Default" Indeterminate="true" />
+        }
     </div>
 </div> 
 
@@ -79,9 +98,7 @@
             <MudText Class="fs-3 fw-bold text-light">SUMMARY</MudText>
         </div>
         <p class="text-light ">
-            Mình vừa bị đuổi ra khỏi chỗ thuê trọ mn ạ, nơi mà mình gắn bó suốt gần 10 năm và lý do là mình không thể đóng nổi 2 tháng tiền trọ. Một chuyện mà trong mơ mình cũng chưa bao giờ nghĩ đến nó lại xảy ra với chính bản thân mình.
-            Mình 28 tuổi, ở cái tuổi đáng ra phải vững vàng về tài chính nhưng mình lại chẳng Gia đình mình thuần nông nên cũng chẳng dư giả gì, nhưng may mắn một điều là bố mẹ chăm chỉ lo cho mình được học hành đến nơi đến chốn, rồi mình ra trường kiếm được việc ưng ý, cũng đỡ đần được bố mẹ phần nào, cứ tưởng dần dần cuộc sống ổn định và mọi thứ sẽ tốt dần lên. Nhưng không mọi người ạ, biến cố luôn ập đến với cách mà mình không ngờ đến nhất, cứ như cuộc sống thử thách và trêu đùa mình vậy. Cách đây 2 năm bố mình bị tai nạn, dẫn đến mất hết sức lao động và quãng thời gian đó mình cũng dùng gần hết số tiền mình và gia đình tích cóp được trong khoảng thời gian đó. Quãng thời gian đó mình phải nghỉ việc và về nhà chăm bố cùng mẹ vì mình là con một. Sau đó một thời gian sức khoẻ bố mình cũng tốt hơn nhiều, mình cũng yên tâm phần nào để bước tiếp hành trình của cuộc đời mình đó là tìm việc và mình tìm được công việc và mức lương mình mong muốn. Giây phút tưởng chừng như cuộc đời đã mỉm cười với mình rồi nhưng không, biến cố lại ập đến với mình thêm một lần nữa, chỗ làm đầu tiên mình bị nợ lương gần 3 tháng và sau nhiều lần hứa hẹn thì ông giám đốc bỏ trốn, đợt đó mình cũng loay hoay tìm việc và sang chỗ làm mới, công ty cũng nợ lương 2 tháng kiểu không có nguồn tiền để thanh toán cho nhân viên. Mọi thứ tưởng chừng như đến đó là đủ với mình rồi, nhưng không.  Đúng giai đoạn đó mẹ mình phát hiện bị K vòm họng mọi người ạ, thời điểm mình nghe tin mình bị sốc rất lâu mới lấy lại được tinh thần. May mắn một điều là may mẹ mình phát hiện đang ở giai đoạn sớm nên cũng điều trị được. Kể từ thời điểm đó mình đều dồn hết mọi nguồn tiền để gửi về, vì chi phí điều trị cực kì tốn kém, rồi cộng thêm hơn 5 tháng đi làm mà không lấy được một đồng lương nào nữa, lắm lúc cũng muốn về nhà để được quây quần với bố mẹ nhưng mình là lao động chính, nếu mình về thì gia đình hết khả năng xoay xở mất, nên cũng cố gắng bám trụ ở mảnh đất đầy bon chen xô bồ.
-            Cho đến hiện tại, một mình đứng trong căn phòng trọ mình gắn bó gần 10 năm, với một đống đồ ngổn ngang vây quanh, nó cũng như cảm xúc của mình hiện tại vậy, bao kỉ niệm buồn vui từ thời sv, cảm giác tủi thân xấu hổ ... Rồi chẳng biết tương lai mai này sẽ đi về đâu nữa...
+           @FilmDetail.Description
         </p>
     </div>
 </div>  
@@ -102,56 +119,80 @@
     </div>
     <div class="container d-flex justify-content-between flex-wrap" style="margin-top:50px">
 
-        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
-            <MudCardMedia Height="400" Image="./images/movie-1.png"></MudCardMedia>
-            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
-                <MudText Class="ms-0 me-0">Story of the day</MudText>
-                <MudText Class="ms-0 me-0" Typo="Typo.body2">2022</MudText>
-            </MudCardContent>
-            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
-                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="2" />
-                <MudText Class="ms-0 me-0" Typo="Typo.body2">128Min</MudText>
-            </MudCardContent>
-        </MudCard>
-        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
-            <MudCardMedia Height="400" Image="./images/movie-2.png"></MudCardMedia>
-            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
-                <MudText Class="ms-0 me-0">Story of the day</MudText>
-                <MudText Class="ms-0 me-0" Typo="Typo.body2">2022</MudText>
-            </MudCardContent>
-            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
-                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="2" />
-                <MudText Class="ms-0 me-0" Typo="Typo.body2">128Min</MudText>
-            </MudCardContent>
-        </MudCard>
-        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
-            <MudCardMedia Height="400" Image="./images/movie-3.png"></MudCardMedia>
-            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
-                <MudText Class="ms-0 me-0">Story of the day</MudText>
-                <MudText Class="ms-0 me-0" Typo="Typo.body2">2022</MudText>
-            </MudCardContent>
-            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
-                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="2" />
-                <MudText Class="ms-0 me-0" Typo="Typo.body2">128Min</MudText>
-            </MudCardContent>
-        </MudCard>
-        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
-            <MudCardMedia Height="400" Image="./images/movie-4.png"></MudCardMedia>
-            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
-                <MudText Class="ms-0 me-0">Story of the day</MudText>
-                <MudText Class="ms-0 me-0" Typo="Typo.body2">2022</MudText>
-            </MudCardContent>
-            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
-                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="2" />
-                <MudText Class="ms-0 me-0" Typo="Typo.body2">128Min</MudText>
-            </MudCardContent>
-        </MudCard>
+        <MudElement class="container d-flex justify-content-between flex-wrap pt-5 mt-5">
+
+            @if (rsSR.Data != null)
+            {
+                @foreach (var i in rsSR.Data)
+                {
+                    string img = i.Image;
+                    <MudButton OnClick="()=>Detail(i.ID)">
+                        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
+                            <img Height="400" src="./images/@img" />
+                            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                                <MudText Class="ms-0 me-0">@i.Name</MudText>
+                                <MudText Class="ms-0 me-0" Typo="Typo.body2">@i.Year</MudText>
+                            </MudCardContent>
+                            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="@i.AvgRating.GetValueOrDefault()" />
+                                <MudText Class="ms-0 me-0" Typo="Typo.body2">
+                                    @if (i.AvgDuration != TimeSpan.Zero)
+                                    {
+                                        @i.AvgDuration
+                                    }
+                                    else
+                                    {
+
+                                    }
+                                </MudText>
+                            </MudCardContent>
+                        </MudCard>
+                    </MudButton>
+                }
+            }
+            else
+            {
+                <MudProgressCircular Color="Color.Default" Indeterminate="true" />
+            }
+
+        </MudElement>
 
     </div>
 </div>
 
 @code{
     [Parameter]
-     public Guid id {get ; set;}
+    public Guid id {get ; set;}
+
+    private FilmDto FilmDetail = new FilmDto();
+    FilmsWithPaginationRequest requestSR = new FilmsWithPaginationRequest();
+    PaginationResponse<FilmDto> rsSR = new PaginationResponse<FilmDto>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadSR();
+        FilmDetail = await _Ser.GetById(id);
+        
+    } 
+
+    public async Task LoadSR()
+    {
+        // requestSR.Rating = 5;
+        requestSR.Genre = Guid.Parse("1A860E75-0C55-485D-616C-08DC9E33318A");
+        requestSR.PageSize = 4;
+        rsSR = await _Ser.GetAll(requestSR);
+    }
+
+    public async Task Detail(Guid id)
+    {
+        naviga.NavigateTo($"/FilmDetail/{id}");
+        FilmDetail = await _Ser.GetById(id);
+    } 
+
+    public async Task Watch(Guid id)
+    {
+        naviga.NavigateTo($"/WatchingFilm/{id}");
+    }
+
 }
 
