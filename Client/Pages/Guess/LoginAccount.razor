@@ -1,0 +1,83 @@
+﻿@page "/Login"
+@layout NoneLayout
+<h1 style="text-align: center;">Login</h1>
+
+<EditForm Model="@model" OnValidSubmit="HandleAsync">
+    <DataAnnotationsValidator />
+    <MudGrid>
+        <MudItem Class="w-100 h-100">
+            <MudCard Class="p-2 m-4" Style="background: none;color:white;">
+                <MudCardContent >
+                    <MudTextField Style="color:white;" @bind-Value="model.Username" Placeholder="User Name" />
+
+                    <MudTextField Class="my-5" @bind-Value="model.Password" InputType="InputType.Password" Placeholder="Password" Style="color:white" />
+				</MudCardContent>
+                <div style="display:flex;justify-content: space-between">
+					<div>
+                        <MudCheckBox @bind-Value="Basic_CheckBox2" Color="Color.Primary">Remember me</MudCheckBox>
+					</div>
+
+					<div>
+                        <MudLink Href="#" Underline="Underline.Always">Forgot Password</MudLink>
+					</div>
+				</div>
+                <MudCardActions Class="d-flex justify-content-center align-items-center mt-2">
+                    <MudButton Disabled="@_processing" OnClick="ProcessSomething" Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large">
+                        @if (_processing)
+                        {
+                            <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                            <MudText Class="ms-2">Processing</MudText>
+                        }
+                        else
+                        {
+                            <MudText>Login</MudText>
+                        }
+                    </MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</EditForm>
+
+
+
+
+<div class="d-flex justify-content-center align-items-center mt-2">
+    <p>
+        Don't have an account <a href="https://localhost:7272/register" class="text-primary">Register</a>
+    </p>
+</div>
+
+<div class="d-flex justify-content-center align-items-center">
+    <ion-icon style="width: 40px; height: 40px;padding-right: 20px ;" name="logo-google"></ion-icon>
+    <ion-icon style="width: 40px; height: 40px;padding-right: 20px ;" name="logo-facebook"></ion-icon>
+    <ion-icon name="logo-discord" style="width: 40px; height: 40px;"></ion-icon>
+</div>
+
+<div class="d-flex justify-content-center align-items-center">
+    <ion-icon style="width: 50px; height: 50px;margin-top: 50px;" name="arrow-back-circle-outline"></ion-icon>
+</div>
+
+@code {
+    public bool Basic_CheckBox2 { get; set; } = true;
+    private class LoginModel
+    {
+        public string? Username { get; set; }
+        public string? Password { get; set; }
+    }
+    private bool _processing = false;
+    private LoginModel model = new LoginModel();
+    async Task ProcessSomething()
+    {
+        _processing = true;
+        await Task.Delay(2000);
+        _processing = false;
+    }
+
+    private async Task HandleAsync()
+    {
+        _processing = true;
+        await Task.Delay(2000);
+        _processing = false;
+    }
+}
