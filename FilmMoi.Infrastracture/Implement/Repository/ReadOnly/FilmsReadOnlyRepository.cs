@@ -30,16 +30,29 @@ namespace FilmMoi.Infrastructure.Implement.Repository.ReadOnly
 
         public async Task<PaginationResponse<FilmDto>> GetAll(FilmsWithPaginationRequest obj, CancellationToken cancellationToken)
         {
-            var query = _db.Films.Include(x => x.GenreFilms).Include(x=>x.Ratings).AsNoTracking();
+            var query = _db.Films.Include(x => x.GenreFilms).Include(x=>x.Ratings).Include(x => x.GenreFilms).AsNoTracking();
+            if (obj.Status != null)
+            {
+                query = query.Where(x => x.Status == obj.Status);
+            }
             if (!string.IsNullOrWhiteSpace(obj.Name))
             {
                query = query.Where(x => x.Name.Contains(obj.Name));
             }
             if (obj.Rating != 0)
             {
-				query = query.Where(x => x.Ratings.Count == obj.Rating);
-			}
-            
+                query = query.Where(x => x.Ratings.Count > 0);
+                query = query.Where(x => Math.Floor((double)(x.Ratings.Sum(r => r.Rating) / x.Ratings.Count)) == (double)obj.Rating);
+            }
+            if (obj.Genre != null)
+            {
+                query = query.Where(x => x.GenreFilms.Any(x => x.ID_Genre == obj.Genre));
+            }
+            if (obj.Year != null)
+            {
+                query = query.Where(x => x.Year == obj.Year);
+            }
+
             var result = await query.PaginateAsync<Films, FilmDto>(obj, _map, cancellationToken);
 
             return new PaginationResponse<FilmDto>()

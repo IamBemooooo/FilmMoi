@@ -1,11 +1,14 @@
-﻿@page "/WatchingFilm"
+﻿@page "/WatchingFilm/{id:guid}"
+@using Client.Data.IServices.IReadOnlyService
+@using Client.DataTransferObj.Films
 
 @layout MainLayout
 
 <MudElement class="container-fluid d-flex justify-content-center" style="background-image:url(./images/top-rated-bg.jpg)">
     <div class="container justify-content-center pt-5" style="background-color:#1a1a1a;min-height:200px">
         <video class="container p-0 mt-5" id="videoPlayer" webkit-allowfullscreen controls autoplay muted>
-            <source src="https://www.facebook.com/share/v/CjHMiYRpohaPxCXM/" type="video/mp4">
+            @* <iframe src="https://drive.google.com/file/d/1kO67ncHd5MJoCSF7YyETXAGUDMbRaPkg/preview" width="640" height="480" allow="autoplay"></iframe> *@
+            <source src="https://drive.google.com/file/d/1OJ9aa6i8KM4CK-15fVmIbKHsTfStMubG/view?usp=sharing" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
@@ -129,5 +132,7 @@
 
 
 @code{
-    public string url = "https://www.tiktok.com/@truyenhinhtuoitre/video/7368401006092111121?is_from_webapp=1&sender_device=pc";
+    [Parameter]
+    public Guid id { get; set; }
+    
 }

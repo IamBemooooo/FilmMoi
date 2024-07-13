@@ -29,6 +29,13 @@ namespace FilmMoi.Infrastracture.Implement.Repository.ReadWrite
                {
                     data.CreatedTime = DateTime.UtcNow;
                     _context.Ratings.Add(data);
+
+                    var Film = _context.Films.Find(data.ID_Film);
+                    var ratings = _context.Ratings.Where(x => x.ID_Film == data.ID_Film);
+                    double ratingvalue = ratings.Average(x => x.Rating);
+                    Film.AvgRating = Int32.Parse(ratingvalue.ToString());
+                    _context.Films.Update(Film);
+
                     await _context.SaveChangesAsync();
                     return await Task.FromResult(true);
                }
