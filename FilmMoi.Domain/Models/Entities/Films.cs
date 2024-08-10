@@ -14,7 +14,8 @@ namespace FilmMoi.Domain.Models.Entities
         public string Name { get; set; }
         public string Image { get; set; }
         public TimeSpan AvgDuration { get; set; }
-        public int TotalEpisode { get; set; }
+        public int? AvgRating { get; set; }
+        public int? TotalEpisode { get; set; }
         public string Description { get; set; }
         public FilmStatus Status { get; set; }
         public int Year { get; set; }

@@ -11,10 +11,10 @@ namespace FilmMoi.Application.DataTransferObj.Films
     public class FilmsWithPaginationRequest : PaginationRequest
     {       
         public string? Name { get; set; }
-
         public decimal Rating { get; set; }
+        public Guid? Genre { get; set; }
+        public int? Year { get; set; }
         public FilmStatus? Status { get; set; }
-
                 
     }
 }

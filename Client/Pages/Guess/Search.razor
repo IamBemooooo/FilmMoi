@@ -1,79 +1,152 @@
-﻿@page "/SearchFilm"
+﻿@page "/SearchFilm/{id:guid}"
+@using Client.Data.IServices.IReadOnlyService
+@using Client.DataTransferObj.Films
+@using Client.DataTransferObj.Genres
+@using Client.ValueObj.Pagination
 @layout MainLayout
+@inject IReadOnlyWPService<FilmDto,FilmsWithPaginationRequest> _SerFilm
+@inject IReadOnlyNPService<GenreDto> _SerGenre
+@inject NavigationManager naviga
+
 <MudElement class="container-fluid d-flex justify-content-center" style="background-image:url(./images/top-rated-bg.jpg)">
     <div class="container d-flex text-light justify-content-between pt-5" style="background-color:#1a1a1a;min-height:50px">
-        <div class="input-group" style="width:57%">
-            <span class="input-group-text" id="basic-addon1">Search</span>
-            <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+        <div class="input-group" style="width:50%">
+            <MudTextField Class="bg-light" @bind-Value="name" Label="  Search..."></MudTextField>
         </div>
-        <select style="width:20%" class="form-select" aria-label="Default select example">
-            <option selected>Genre</option>
-            <option value="1">Drama</option>
-            <option value="2">Action</option>
-            <option value="3">Horror</option>
-        </select>
-        <select style="width:10%" class="form-select " aria-label="Default select example">
-            <option selected>Year</option>
-            <option value="1">2024</option>
-            <option value="2">2023</option>
-            <option value="3">2022</option>
-        </select>
-        <select style="width:10%" class="form-select" aria-label="Default select example">
-            <option selected>Rating</option>
-            <option value="1">5</option>
-            <option value="2">4</option>
-            <option value="3">3</option>
-        </select>
+       
+        <div style="width:50%" class="container-fluid d-flex justify-content-between">
+            <div style="width:32%">
+                <MudSelect SelectedValuesChanged="()=>OnGenreSelected()" @bind-Value="@genre" Class="bg-light" Style="width:10%;" T="String" Label="Genre" AnchorOrigin="Origin.BottomCenter">
+
+                    @if (Genres != null)
+                    {
+                        foreach (var i in Genres)
+                        {
+                            @* <option value="@i.ID">@i.GenreName</option> *@
+                            <MudSelectItem Class="bg-light" Value="@i.GenreName"></MudSelectItem>
+                        }
+                    }
+                </MudSelect>
+            </div>
+            
+            <div style="width:32%">
+                <MudSelect Class="bg-light" Style="width:10%" T="String" Label="Year" AnchorOrigin="Origin.BottomCenter">
+                    <MudSelectItem Value="@("2024")" />
+                    <MudSelectItem Value="@("2023")" />
+                    <MudSelectItem Value="@("2022")" />
+                    <MudSelectItem Value="@("2021")" />
+                    <MudSelectItem Value="@("2020")" />
+                </MudSelect>
+            </div>
+
+            <div style="width:32%">
+                <MudSelect Class="bg-light" Style="width:10%" T="String" Label="Rating" AnchorOrigin="Origin.BottomCenter">
+                    <MudSelectItem Value="@("5")" />
+                    <MudSelectItem Value="@("4")" />
+                    <MudSelectItem Value="@("3")" />
+                    <MudSelectItem Value="@("2")" />
+                    <MudSelectItem Value="@("1")" />
+                </MudSelect>
+            </div>
+
+           
+        </div>
     </div>
 </MudElement>
 
 <div class="container-fluid justify-content-center" style="background-image:url(./images/upcoming-bg.png);min-height:870px;padding-bottom:100px">
     <div class="container d-flex justify-content-between flex-wrap" style="padding-top:50px;background-color:#1a1a1a;">
 
-        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
-            <MudCardMedia Height="400" Image="./images/movie-1.png"></MudCardMedia>
-            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
-                <MudText Class="ms-0 me-0">Story of the day</MudText>
-                <MudText Class="ms-0 me-0" Typo="Typo.body2">2022</MudText>
-            </MudCardContent>
-            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
-                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="2" />
-                <MudText Class="ms-0 me-0" Typo="Typo.body2">128Min</MudText>
-            </MudCardContent>
-        </MudCard>
-        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
-            <MudCardMedia Height="400" Image="./images/movie-2.png"></MudCardMedia>
-            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
-                <MudText Class="ms-0 me-0">Story of the day</MudText>
-                <MudText Class="ms-0 me-0" Typo="Typo.body2">2022</MudText>
-            </MudCardContent>
-            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
-                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="2" />
-                <MudText Class="ms-0 me-0" Typo="Typo.body2">128Min</MudText>
-            </MudCardContent>
-        </MudCard>
-        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
-            <MudCardMedia Height="400" Image="./images/movie-3.png"></MudCardMedia>
-            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
-                <MudText Class="ms-0 me-0">Story of the day</MudText>
-                <MudText Class="ms-0 me-0" Typo="Typo.body2">2022</MudText>
-            </MudCardContent>
-            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
-                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="2" />
-                <MudText Class="ms-0 me-0" Typo="Typo.body2">128Min</MudText>
-            </MudCardContent>
-        </MudCard>
-        <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
-            <MudCardMedia Height="400" Image="./images/movie-4.png"></MudCardMedia>
-            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
-                <MudText Class="ms-0 me-0">Story of the day</MudText>
-                <MudText Class="ms-0 me-0" Typo="Typo.body2">2022</MudText>
-            </MudCardContent>
-            <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
-                <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="2" />
-                <MudText Class="ms-0 me-0" Typo="Typo.body2">128Min</MudText>
-            </MudCardContent>
-        </MudCard>
+        @if (rs.Data != null)
+        {
+            @foreach (var i in rs.Data)
+            {
+                string img = i.Image;
+                <MudButton OnClick="()=>Detail(i.ID)">
+                    <MudCard Style="min-width:24%;max-width:100%;margin-top:30px;background-color: rgba(0, 0, 0, 0)" Class="btn" data-mdb-ripple-color="light">
+                        <img Height="400" src="./images/@img" />
+                        <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                            <MudText Class="ms-0 me-0">@i.Name</MudText>
+                            <MudText Class="ms-0 me-0" Typo="Typo.body2">@i.Year</MudText>
+                        </MudCardContent>
+                        <MudCardContent Class="container-fluid d-flex justify-content-between text-light ps-0 pe-0">
+                            <MudRating Class="ms-0 me-0" ReadOnly="true" SelectedValue="@i.AvgRating.GetValueOrDefault()" />
+                            <MudText Class="ms-0 me-0" Typo="Typo.body2">
+                                @if (i.AvgDuration != TimeSpan.Zero)
+                                {
+                                    @i.AvgDuration
+                                }
+                                else
+                                {
+
+                                }
+                            </MudText>
+                        </MudCardContent>
+                    </MudCard>
+                </MudButton>
+            }
+        }
+        else
+        {
+            <MudProgressCircular Color="Color.Default" Indeterminate="true" />
+        }
 
     </div>
 </div>
+
+@code{
+    [Parameter]
+    public Guid id {get ; set;}
+
+    public string name = "";
+    public string genre = "";
+
+    FilmsWithPaginationRequest request = new FilmsWithPaginationRequest();
+    PaginationResponse<FilmDto> rs = new PaginationResponse<FilmDto>();
+    ICollection<GenreDto> Genres = new List<GenreDto>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadGenre();
+        await LoadFilms();
+
+    }
+
+    public async Task LoadGenre()
+    {
+        Genres = await _SerGenre.GetAllAsync("",id);
+    } 
+
+    public async Task LoadFilms()
+    {
+        rs.Data = null;
+        if (id != Guid.Empty) request.Genre = id;
+        rs = await _SerFilm.GetAll(request);
+    }
+
+    protected async override Task OnParametersSetAsync()
+    {
+        await LoadFilms();
+        StateHasChanged();
+    }
+
+    private async Task OnGenreSelected()
+    {
+        var obj = Genres.FirstOrDefault(x => x.GenreName.ToLower() == genre.ToLower());
+       
+        if(obj!=null)
+        {
+            id = obj.ID;
+            request.Genre = id;
+            naviga.NavigateTo($"/SearchFilm/{id}");
+            await base.OnParametersSetAsync();
+            StateHasChanged();
+        }
+    } 
+
+    public async Task Detail(Guid id)
+    {
+        naviga.NavigateTo($"/FilmDetail/{id}");
+    }
+} 
+
